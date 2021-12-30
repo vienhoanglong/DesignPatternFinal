@@ -11,7 +11,7 @@ namespace QuanLiRapPhim.DAO
 
         private DataProvider() { }
 
-        private static string connectionSTR = "Data Source=LAPTOP-B3IM0AE0;Initial Catalog=QLRP;Integrated Security=True";
+        private static string connectionSTR = "Data Source=.;Initial Catalog=QLRP;Integrated Security=True";
         public static bool TestConnectionSQL(string conn)
         {
             bool result = false;

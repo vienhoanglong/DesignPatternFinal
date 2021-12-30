@@ -26,6 +26,7 @@ namespace QuanLiRapPhim
                 this.Hide();
                 frm.ShowDialog();
                 this.Show();
+
             }
             else if (result == 0)
             {

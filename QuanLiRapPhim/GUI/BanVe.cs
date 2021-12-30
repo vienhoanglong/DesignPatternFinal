@@ -189,50 +189,50 @@ namespace QuanLiRapPhim
         }
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Tao ddi ngu");
-            //       if (listSeatSelected.Count == 0)
-            //       {
-            //           MessageBox.Show("Vui lòng chọn vé trước khi thanh toán");
-            //           return;
-            //       }
-            //       string message = "Bạn có chắc chắn mua những vé: \n";
-            //       foreach (Button btn in listSeatSelected)
-            //       {
-            //           message += "[" + btn.Text + "] ";
-            //       }
-            //       message += "\nKhông?";
-            //       DialogResult result = MessageBox.Show(message, "Xác nhận",
-            //           MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            //       if (result == DialogResult.OK)
-            //       {
-            //           int ret = 0;
-            //           if (chkCustomer.Checked == true)
-            //           {
-            //               foreach (Button btn in listSeatSelected)
-            //               {
-            //                   Ve ticket = btn.Tag as Ve;
 
-            //                   ret += VeDAO.BuyTicket(ticket.ID, ticket.Type, customer.ID, ticket.Price);
-            //               }
-            //customer.Point += plusPoint;
-            //KhachHangDAO.UpdatePointCustomer(customer.ID, customer.Point);
-            //           }
-            //           else
-            //           {
-            //               foreach (Button btn in listSeatSelected)
-            //               {
-            //                   Ve ticket = btn.Tag as Ve;
+            if (listSeatSelected.Count == 0)
+            {
+                MessageBox.Show("Vui lòng chọn vé trước khi thanh toán");
+                return;
+            }
+            string message = "Bạn có chắc chắn mua những vé: \n";
+            foreach (Button btn in listSeatSelected)
+            {
+                message += "[" + btn.Text + "] ";
+            }
+            message += "\nKhông?";
+            DialogResult result = MessageBox.Show(message, "Xác nhận",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.OK)
+            {
+                int ret = 0;
+                if (chkCustomer.Checked == true)
+                {
+                    foreach (Button btn in listSeatSelected)
+                    {
+                        Ve ticket = btn.Tag as Ve;
 
-            //                   ret += VeDAO.BuyTicket(ticket.ID, ticket.Type, ticket.Price);
-            //               }
-            //           }
-            //           if (ret == listSeatSelected.Count)
-            //           {
-            //               MessageBox.Show("Thanh toán vé thành công");
-            //           }
-            //       }
-            //       RestoreDefault();
-            //       this.OnLoad(new EventArgs());
+                        ret += VeDAO.BuyTicket(ticket.ID, ticket.Type, customer.ID, ticket.Price);
+                    }
+                    customer.Point += plusPoint;
+                    KhachHangDAO.UpdatePointCustomer(customer.ID, customer.Point);
+                }
+                else
+                {
+                    foreach (Button btn in listSeatSelected)
+                    {
+                        Ve ticket = btn.Tag as Ve;
+
+                        ret += VeDAO.BuyTicket(ticket.ID, ticket.Type, ticket.Price);
+                    }
+                }
+                if (ret == listSeatSelected.Count)
+                {
+                    MessageBox.Show("Thanh toán vé thành công");
+                }
+            }
+            RestoreDefault();
+            this.OnLoad(new EventArgs());
         }
 
         private void rdoStudent_Click(object sender, EventArgs e)
@@ -360,6 +360,9 @@ namespace QuanLiRapPhim
             }
         }
 
-       
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

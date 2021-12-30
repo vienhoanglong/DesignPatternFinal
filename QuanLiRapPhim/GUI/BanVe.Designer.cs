@@ -89,9 +89,9 @@
             this.flpSeat.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.flpSeat.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flpSeat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.flpSeat.Location = new System.Drawing.Point(30, 154);
+            this.flpSeat.Location = new System.Drawing.Point(13, 154);
             this.flpSeat.Name = "flpSeat";
-            this.flpSeat.Size = new System.Drawing.Size(974, 400);
+            this.flpSeat.Size = new System.Drawing.Size(991, 400);
             this.flpSeat.TabIndex = 0;
             // 
             // panel1
@@ -103,22 +103,23 @@
             this.panel1.Location = new System.Drawing.Point(30, 87);
             this.panel1.Name = "panel1";
             this.panel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.panel1.Size = new System.Drawing.Size(1174, 50);
+            this.panel1.Size = new System.Drawing.Size(777, 50);
             this.panel1.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.BackColor = System.Drawing.Color.DodgerBlue;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1172, 48);
+            this.label1.Size = new System.Drawing.Size(775, 48);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Màn Chiếu";
+            this.label1.Text = "Màn Hình";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel2
             // 

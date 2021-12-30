@@ -614,8 +614,7 @@ INSERT INTO LichChieu(id, ThoiGianChieu, idPhong, idDinhDang, GiaVe, TrangThai) 
 
 SET IDENTITY_INSERT [dbo].[Ve] ON
 GO
-INSERT INTO Ve(LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) 
-VALUES(0,N'LC01',N'A1',NULL,0,0.0000);
+INSERT INTO Ve(LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES(0,N'LC01',N'A1',NULL,0,0.0000);
 INSERT INTO Ve(LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'A2',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'A3',NULL,0,0.0000);
 INSERT INTO Ve(LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'A4',NULL,0,0.0000);

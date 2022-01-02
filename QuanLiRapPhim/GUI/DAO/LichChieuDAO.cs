@@ -11,12 +11,12 @@ namespace QuanLiRapPhim.DAO
         public static DataTable GetListShowTimeByFormatMovie(string formatMovieID, DateTime date)
         {
             string query = "USP_GetListShowTimesByFormatMovie @ID , @Date";
-            return DataProvider.ExecuteQuery(query, new object[] { formatMovieID, date });
+            return DataProvider.getInstance().ExecuteQuery(query, new object[] { formatMovieID, date });
         }
         public static List<ThoiGianChieu> GetAllListShowTimes()
         {
             List<ThoiGianChieu> listShowTimes = new List<ThoiGianChieu>();
-            DataTable data = DataProvider.ExecuteQuery("USP_GetAllListShowTimes");
+            DataTable data = DataProvider.getInstance().ExecuteQuery("USP_GetAllListShowTimes");
             foreach (DataRow row in data.Rows)
             {
                 ThoiGianChieu showTimes = new ThoiGianChieu(row);
@@ -27,7 +27,7 @@ namespace QuanLiRapPhim.DAO
         public static List<ThoiGianChieu> GetListShowTimesNotCreateTickets()
         {
             List<ThoiGianChieu> listShowTimes = new List<ThoiGianChieu>();
-            DataTable data = DataProvider.ExecuteQuery("USP_GetListShowTimesNotCreateTickets");
+            DataTable data = DataProvider.getInstance().ExecuteQuery("USP_GetListShowTimesNotCreateTickets");
             foreach (DataRow row in data.Rows)
             {
                 ThoiGianChieu showTimes = new ThoiGianChieu(row);
@@ -38,24 +38,24 @@ namespace QuanLiRapPhim.DAO
         public static int UpdateStatusShowTimes(string showTimesID, int status)
         {
             string query = "USP_UpdateStatusShowTimes @idLichChieu , @status";
-            return DataProvider.ExecuteNonQuery(query, new object[] { showTimesID, status });
+            return DataProvider.getInstance().ExecuteNonQuery(query, new object[] { showTimesID, status });
         }
 
         public static DataTable GetListShowtime()
         {
-            return DataProvider.ExecuteQuery("EXEC USP_GetShowtime");
+            return DataProvider.getInstance().ExecuteQuery("EXEC USP_GetShowtime");
         }
 
         public static bool InsertShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
         {
-            int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertShowtime @id , @idPhong , @idDinhDang , @thoiGianChieu , @giaVe ", new object[] { id, cinemaID, formatMovieID, time, ticketPrice });
+            int result = DataProvider.getInstance().ExecuteNonQuery("EXEC USP_InsertShowtime @id , @idPhong , @idDinhDang , @thoiGianChieu , @giaVe ", new object[] { id, cinemaID, formatMovieID, time, ticketPrice });
             return result > 0;
         }
 
         public static bool UpdateShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)
         {
             string command = string.Format("USP_UpdateShowtime @id , @idPhong , @idDinhDang , @thoiGianChieu , @giaVe ");
-            int result = DataProvider.ExecuteNonQuery(command, new object[] { id, cinemaID, formatMovieID, time, ticketPrice });
+            int result = DataProvider.getInstance().ExecuteNonQuery(command, new object[] { id, cinemaID, formatMovieID, time, ticketPrice });
             return result > 0;
         }
 
@@ -63,13 +63,13 @@ namespace QuanLiRapPhim.DAO
         {
             VeDAO.DeleteTicketsByShowTimes(id);
 
-            int result = DataProvider.ExecuteNonQuery("DELETE dbo.LichChieu WHERE id = '" + id + "'");
+            int result = DataProvider.getInstance().ExecuteNonQuery("DELETE dbo.LichChieu WHERE id = '" + id + "'");
             return result > 0;
         }
 
         public static DataTable SearchShowtimeByMovieName(string movieName)
         {
-            DataTable data = DataProvider.ExecuteQuery("EXEC USP_SearchShowtimeByMovieName @tenPhim ", new object[] { movieName });
+            DataTable data = DataProvider.getInstance().ExecuteQuery("EXEC USP_SearchShowtimeByMovieName @tenPhim ", new object[] { movieName });
             return data;
         }
     }

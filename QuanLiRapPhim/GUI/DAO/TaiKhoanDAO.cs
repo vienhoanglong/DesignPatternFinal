@@ -29,7 +29,7 @@ namespace QuanLiRapPhim.DAO
             string pass = PasswordEncryption(passWord);
 
             string query = "USP_Login @userName , @passWord";
-            DataTable result = DataProvider.ExecuteQuery(query, new object[]
+            DataTable result = DataProvider.getInstance().ExecuteQuery(query, new object[]
             { userName, pass });
             if (result == null)
                 return -1;
@@ -44,14 +44,14 @@ namespace QuanLiRapPhim.DAO
             string oldPass = PasswordEncryption(passWord);
             string newPass = PasswordEncryption(newPassWord);
 
-            int result = DataProvider.ExecuteNonQuery("EXEC USP_UpdatePasswordForAccount @username , @pass , @newPass", new object[] { userName, oldPass, newPass });
+            int result = DataProvider.getInstance().ExecuteNonQuery("EXEC USP_UpdatePasswordForAccount @username , @pass , @newPass", new object[] { userName, oldPass, newPass });
 
             return result > 0;
         }
 
         public static TaiKhoan GetAccountByUserName(string userName)
         {
-            DataTable data = DataProvider.ExecuteQuery("Select * from TaiKhoan where userName = '" + userName + "'");
+            DataTable data = DataProvider.getInstance().ExecuteQuery("Select * from TaiKhoan where userName = '" + userName + "'");
 
             foreach (DataRow row in data.Rows)
             {
@@ -62,41 +62,41 @@ namespace QuanLiRapPhim.DAO
         }
         public static void DeleteAccountByIdStaff(string idStaff)
         {
-            DataProvider.ExecuteQuery("DELETE dbo.TaiKhoan WHERE idNV = '" + idStaff + "'");
+            DataProvider.getInstance().ExecuteQuery("DELETE dbo.TaiKhoan WHERE idNV = '" + idStaff + "'");
         }
 
 		public static DataTable GetAccountList()
 		{
-			return DataProvider.ExecuteQuery("USP_GetAccountList");
+			return DataProvider.getInstance().ExecuteQuery("USP_GetAccountList");
 		}
 
 		public static bool InsertAccount(string username, int accountType, string staffID)
 		{
-			int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertAccount @username , @loaiTK , @idnv ", new object[] { username, accountType, staffID });
+			int result = DataProvider.getInstance().ExecuteNonQuery("EXEC USP_InsertAccount @username , @loaiTK , @idnv ", new object[] { username, accountType, staffID });
 			return result > 0;
 		}
 
 		public static bool UpdateAccount(string username, int accountType)
 		{
 			string command = string.Format("USP_UpdateAccount  @username , @loaiTK", new object[] { username, accountType});
-			int result = DataProvider.ExecuteNonQuery(command);
+			int result = DataProvider.getInstance().ExecuteNonQuery(command);
 			return result > 0;
 		}
 
 		public static bool DeleteAccount(string username)
 		{
-			int result = DataProvider.ExecuteNonQuery("DELETE dbo.TaiKhoan WHERE UserName = N'" + username + "'");
+			int result = DataProvider.getInstance().ExecuteNonQuery("DELETE dbo.TaiKhoan WHERE UserName = N'" + username + "'");
 			return result > 0;
 		}
 
 		public static DataTable SearchAccountByStaffName(string name)
 		{
-			return DataProvider.ExecuteQuery("EXEC USP_SearchAccount @hoten ", new object[] { name });
+			return DataProvider.getInstance().ExecuteQuery("EXEC USP_SearchAccount @hoten ", new object[] { name });
 		}
 
 		public static bool ResetPassword(string username)
 		{
-			int result = DataProvider.ExecuteNonQuery("USP_ResetPasswordtAccount @username", new object[] { username});
+			int result = DataProvider.getInstance().ExecuteNonQuery("USP_ResetPasswordtAccount @username", new object[] { username});
 			return result > 0;
 		}
     }

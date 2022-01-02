@@ -28,7 +28,7 @@ namespace QuanLiRapPhim.DAO
         public static List<Phim> GetListMovieByDate(DateTime date)
         {
             List<Phim> listMovie = new List<Phim>();
-            DataTable data = DataProvider.ExecuteQuery("select * from Phim where @Date <= NgayKetThuc", new object[] { date });
+            DataTable data = DataProvider.getInstance().ExecuteQuery("select * from Phim where @Date <= NgayKetThuc", new object[] { date });
             foreach (DataRow row in data.Rows)
             {
                 Phim movie = new Phim(row);
@@ -40,7 +40,7 @@ namespace QuanLiRapPhim.DAO
         public static List<Phim> GetListMovie()
         {
             List<Phim> listMovie = new List<Phim>();
-            DataTable data = DataProvider.ExecuteQuery("SELECT * FROM Phim");
+            DataTable data = DataProvider.getInstance().ExecuteQuery("SELECT * FROM Phim");
             foreach (DataRow row in data.Rows)
             {
                 Phim movie = new Phim(row);
@@ -51,35 +51,35 @@ namespace QuanLiRapPhim.DAO
 
         public static DataTable GetMovie()
         {
-            return DataProvider.ExecuteQuery("EXEC USP_GetMovie");
+            return DataProvider.getInstance().ExecuteQuery("EXEC USP_GetMovie");
         }
 
         public static bool InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
         {
-            int result = DataProvider.ExecuteNonQuery("EXEC USP_InsertMovie @id , @tenPhim , @moTa , @thoiLuong , @ngayKhoiChieu , @ngayKetThuc , @sanXuat , @daoDien , @namSX , @apPhich ", new object[] { id, name, desc, length, startDate, endDate, productor, director, year, image});
+            int result = DataProvider.getInstance().ExecuteNonQuery("EXEC USP_InsertMovie @id , @tenPhim , @moTa , @thoiLuong , @ngayKhoiChieu , @ngayKetThuc , @sanXuat , @daoDien , @namSX , @apPhich ", new object[] { id, name, desc, length, startDate, endDate, productor, director, year, image});
             return result > 0;
         }
 
         public static bool UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
         {
-            int result = DataProvider.ExecuteNonQuery("EXEC USP_UpdateMovie @id , @tenPhim , @moTa , @thoiLuong , @ngayKhoiChieu , @ngayKetThuc , @sanXuat , @daoDien , @namSX , @apPhich ", new object[] { id, name, desc, length, startDate, endDate, productor, director, year, image });
+            int result = DataProvider.getInstance().ExecuteNonQuery("EXEC USP_UpdateMovie @id , @tenPhim , @moTa , @thoiLuong , @ngayKhoiChieu , @ngayKetThuc , @sanXuat , @daoDien , @namSX , @apPhich ", new object[] { id, name, desc, length, startDate, endDate, productor, director, year, image });
             return result > 0;
         }
 
         public static bool DeleteMovie(string id)
         {
-			DataProvider.ExecuteNonQuery("DELETE dbo.PhanLoaiPhim WHERE idPhim = '" + id + "'");
-			DataProvider.ExecuteNonQuery("DELETE dbo.DinhDangPhim WHERE idPhim = '" + id + "'");
+			DataProvider.getInstance().ExecuteNonQuery("DELETE dbo.PhanLoaiPhim WHERE idPhim = '" + id + "'");
+			DataProvider.getInstance().ExecuteNonQuery("DELETE dbo.DinhDangPhim WHERE idPhim = '" + id + "'");
 
 			PhanLoaiPhimDAO.DeleteMovie_GenreByMovieID(id);
-            int result = DataProvider.ExecuteNonQuery("DELETE dbo.Phim WHERE id = '" + id + "'");
+            int result = DataProvider.getInstance().ExecuteNonQuery("DELETE dbo.Phim WHERE id = '" + id + "'");
             return result > 0;
         }
 
         public static Phim GetMovieByID(string id)
         {
             Phim movie = null;
-            DataTable data = DataProvider.ExecuteQuery("SELECT * FROM dbo.Phim WHERE id = '" + id + "'");
+            DataTable data = DataProvider.getInstance().ExecuteQuery("SELECT * FROM dbo.Phim WHERE id = '" + id + "'");
             foreach (DataRow item in data.Rows)
             {
                 movie = new Phim(item);

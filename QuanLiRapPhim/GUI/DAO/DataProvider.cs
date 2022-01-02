@@ -10,9 +10,18 @@ namespace QuanLiRapPhim.DAO
     {
 
         private DataProvider() { }
+        private static DataProvider instance;
+        public static DataProvider getInstance()
+        {
+            if (instance == null)
+            {
+                instance = new DataProvider();
+            }
+            return instance;
+        }
 
         private static string connectionSTR = "Data Source=.;Initial Catalog=QLRP;Integrated Security=True";
-        public static bool TestConnectionSQL(string conn)
+        public bool TestConnectionSQL(string conn)
         {
             bool result = false;
             connectionSTR = conn;
@@ -33,7 +42,7 @@ namespace QuanLiRapPhim.DAO
         }
 
 
-        public static DataTable ExecuteQuery(string query, object[] parameter = null)
+        public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
             try
@@ -73,7 +82,7 @@ namespace QuanLiRapPhim.DAO
             return data;
         }
 
-        public static int ExecuteNonQuery(string query, object[] parameter = null)
+        public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
             try
@@ -110,7 +119,7 @@ namespace QuanLiRapPhim.DAO
             return data;
         }
 
-        public static object ExecuteScalar(string query, object[] parameter = null)
+        public object ExecuteScalar(string query, object[] parameter = null)
         {
             object data = 0;
             try

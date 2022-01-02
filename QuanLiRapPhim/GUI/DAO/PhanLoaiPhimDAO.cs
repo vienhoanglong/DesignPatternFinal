@@ -11,7 +11,7 @@ namespace QuanLiRapPhim.DAO
         public static List<TheLoai> GetListGenreByMovieID(string id)
         {
             List<TheLoai> genreList = new List<TheLoai>();
-            DataTable data = DataProvider.ExecuteQuery("EXEC USP_GetListGenreByMovie @idPhim", new object[] { id });
+            DataTable data = DataProvider.getInstance().ExecuteQuery("EXEC USP_GetListGenreByMovie @idPhim", new object[] { id });
             foreach (DataRow item in data.Rows)
             {
                 TheLoai genre = new TheLoai(item);
@@ -25,24 +25,24 @@ namespace QuanLiRapPhim.DAO
             foreach (TheLoai item in genreList)
             {
                 string command = string.Format("INSERT dbo.PhanLoaiPhim (idPhim, idTheLoai) VALUES  ('{0}','{1}')", movieID, item.ID);
-                DataProvider.ExecuteNonQuery(command);
+                DataProvider.getInstance().ExecuteNonQuery(command);
             }
         }
 
         public static void UpdateMovie_Genre(string movieID, List<TheLoai> genreList)
         //Idea : Delete all rows that contain movieID, then re-add all genre that have been chosen from CheckedListBox to 'PhanLoaiPhim' with movieID
         {
-            DataProvider.ExecuteNonQuery("DELETE dbo.PhanLoaiPhim WHERE idPhim = '" + movieID + "'");
+            DataProvider.getInstance().ExecuteNonQuery("DELETE dbo.PhanLoaiPhim WHERE idPhim = '" + movieID + "'");
             foreach (TheLoai item in genreList)
             {
                 string command = string.Format("INSERT dbo.PhanLoaiPhim (idPhim, idTheLoai) VALUES  ('{0}','{1}')", movieID, item.ID);
-                DataProvider.ExecuteNonQuery(command);
+                DataProvider.getInstance().ExecuteNonQuery(command);
             }
         }
 
         public static void DeleteMovie_GenreByMovieID(string movieID)
         {
-            DataProvider.ExecuteNonQuery("DELETE dbo.PhanLoaiPhim WHERE idPhim = '" + movieID + "'");
+            DataProvider.getInstance().ExecuteNonQuery("DELETE dbo.PhanLoaiPhim WHERE idPhim = '" + movieID + "'");
         }
     }
 }

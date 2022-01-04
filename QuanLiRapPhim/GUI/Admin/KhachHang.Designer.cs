@@ -33,19 +33,19 @@
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.grpCustomer = new System.Windows.Forms.GroupBox();
+            this.txtCusName = new QuanLiRapPhim.Patterns.Strategy.MyTextBox();
+            this.txtCusBirth = new QuanLiRapPhim.Patterns.Strategy.MyTextBox();
+            this.txtCusINumber = new QuanLiRapPhim.Patterns.Strategy.MyTextBox();
+            this.txtCusPhone = new QuanLiRapPhim.Patterns.Strategy.MyTextBox();
             this.nudPoint = new System.Windows.Forms.NumericUpDown();
             this.lblCusID = new System.Windows.Forms.Label();
             this.txtCusID = new System.Windows.Forms.TextBox();
             this.txtCusAddress = new System.Windows.Forms.TextBox();
             this.lblCusINumber = new System.Windows.Forms.Label();
-            this.txtCusName = new System.Windows.Forms.TextBox();
             this.lblCusBirth = new System.Windows.Forms.Label();
-            this.txtCusPhone = new System.Windows.Forms.TextBox();
             this.lblCusPhone = new System.Windows.Forms.Label();
             this.lblCusPoint = new System.Windows.Forms.Label();
-            this.txtCusBirth = new System.Windows.Forms.TextBox();
             this.lblCusAddress = new System.Windows.Forms.Label();
-            this.txtCusINumber = new System.Windows.Forms.TextBox();
             this.lblCusName = new System.Windows.Forms.Label();
             this.btnShowCustomer = new System.Windows.Forms.Button();
             this.dtgvCustomer = new System.Windows.Forms.DataGridView();
@@ -57,10 +57,10 @@
             // 
             // txtSearchCus
             // 
-            this.txtSearchCus.Location = new System.Drawing.Point(998, 26);
-            this.txtSearchCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSearchCus.Location = new System.Drawing.Point(748, 21);
+            this.txtSearchCus.Margin = new System.Windows.Forms.Padding(2);
             this.txtSearchCus.Name = "txtSearchCus";
-            this.txtSearchCus.Size = new System.Drawing.Size(132, 22);
+            this.txtSearchCus.Size = new System.Drawing.Size(100, 20);
             this.txtSearchCus.TabIndex = 20;
             this.txtSearchCus.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtSearchCus_KeyDown);
             // 
@@ -72,10 +72,10 @@
             this.btnDeleteCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnDeleteCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeleteCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(851, 16);
-            this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(638, 13);
+            this.btnDeleteCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
-            this.btnDeleteCustomer.Size = new System.Drawing.Size(91, 32);
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(68, 26);
             this.btnDeleteCustomer.TabIndex = 17;
             this.btnDeleteCustomer.Text = "Xóa";
             this.btnDeleteCustomer.UseVisualStyleBackColor = false;
@@ -89,10 +89,10 @@
             this.btnUpdateCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnUpdateCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdateCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(742, 16);
-            this.btnUpdateCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(556, 13);
+            this.btnUpdateCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
-            this.btnUpdateCustomer.Size = new System.Drawing.Size(91, 32);
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(68, 26);
             this.btnUpdateCustomer.TabIndex = 18;
             this.btnUpdateCustomer.Text = "Sửa";
             this.btnUpdateCustomer.UseVisualStyleBackColor = false;
@@ -106,10 +106,10 @@
             this.btnAddCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnAddCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnAddCustomer.Location = new System.Drawing.Point(635, 16);
-            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnAddCustomer.Location = new System.Drawing.Point(476, 13);
+            this.btnAddCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddCustomer.Name = "btnAddCustomer";
-            this.btnAddCustomer.Size = new System.Drawing.Size(91, 32);
+            this.btnAddCustomer.Size = new System.Drawing.Size(68, 26);
             this.btnAddCustomer.TabIndex = 19;
             this.btnAddCustomer.Text = "Thêm";
             this.btnAddCustomer.UseVisualStyleBackColor = false;
@@ -118,43 +118,79 @@
             // grpCustomer
             // 
             this.grpCustomer.BackColor = System.Drawing.Color.Transparent;
+            this.grpCustomer.Controls.Add(this.txtCusName);
+            this.grpCustomer.Controls.Add(this.txtCusBirth);
+            this.grpCustomer.Controls.Add(this.txtCusINumber);
+            this.grpCustomer.Controls.Add(this.txtCusPhone);
             this.grpCustomer.Controls.Add(this.nudPoint);
             this.grpCustomer.Controls.Add(this.lblCusID);
             this.grpCustomer.Controls.Add(this.txtCusID);
             this.grpCustomer.Controls.Add(this.txtCusAddress);
             this.grpCustomer.Controls.Add(this.lblCusINumber);
-            this.grpCustomer.Controls.Add(this.txtCusName);
             this.grpCustomer.Controls.Add(this.lblCusBirth);
-            this.grpCustomer.Controls.Add(this.txtCusPhone);
             this.grpCustomer.Controls.Add(this.lblCusPhone);
             this.grpCustomer.Controls.Add(this.lblCusPoint);
-            this.grpCustomer.Controls.Add(this.txtCusBirth);
             this.grpCustomer.Controls.Add(this.lblCusAddress);
-            this.grpCustomer.Controls.Add(this.txtCusINumber);
             this.grpCustomer.Controls.Add(this.lblCusName);
             this.grpCustomer.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCustomer.ForeColor = System.Drawing.Color.Red;
-            this.grpCustomer.Location = new System.Drawing.Point(185, 16);
-            this.grpCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.grpCustomer.Location = new System.Drawing.Point(139, 13);
+            this.grpCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.grpCustomer.Name = "grpCustomer";
-            this.grpCustomer.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.grpCustomer.Size = new System.Drawing.Size(335, 560);
+            this.grpCustomer.Padding = new System.Windows.Forms.Padding(2);
+            this.grpCustomer.Size = new System.Drawing.Size(251, 455);
             this.grpCustomer.TabIndex = 16;
             this.grpCustomer.TabStop = false;
             this.grpCustomer.Text = "Thông tin khách hàng";
             // 
+            // txtCusName
+            // 
+            this.txtCusName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusName.Location = new System.Drawing.Point(100, 58);
+            this.txtCusName.Name = "txtCusName";
+            this.txtCusName.Size = new System.Drawing.Size(145, 26);
+            this.txtCusName.TabIndex = 9;
+            this.txtCusName.ValidateType = null;
+            // 
+            // txtCusBirth
+            // 
+            this.txtCusBirth.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusBirth.Location = new System.Drawing.Point(100, 88);
+            this.txtCusBirth.Name = "txtCusBirth";
+            this.txtCusBirth.Size = new System.Drawing.Size(145, 26);
+            this.txtCusBirth.TabIndex = 8;
+            this.txtCusBirth.ValidateType = null;
+            // 
+            // txtCusINumber
+            // 
+            this.txtCusINumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusINumber.Location = new System.Drawing.Point(100, 181);
+            this.txtCusINumber.Name = "txtCusINumber";
+            this.txtCusINumber.Size = new System.Drawing.Size(145, 26);
+            this.txtCusINumber.TabIndex = 7;
+            this.txtCusINumber.ValidateType = null;
+            // 
+            // txtCusPhone
+            // 
+            this.txtCusPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCusPhone.Location = new System.Drawing.Point(100, 149);
+            this.txtCusPhone.Name = "txtCusPhone";
+            this.txtCusPhone.Size = new System.Drawing.Size(145, 26);
+            this.txtCusPhone.TabIndex = 6;
+            this.txtCusPhone.ValidateType = null;
+            // 
             // nudPoint
             // 
             this.nudPoint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudPoint.Location = new System.Drawing.Point(160, 270);
-            this.nudPoint.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nudPoint.Location = new System.Drawing.Point(120, 219);
+            this.nudPoint.Margin = new System.Windows.Forms.Padding(2);
             this.nudPoint.Maximum = new decimal(new int[] {
             1000,
             0,
             0,
             0});
             this.nudPoint.Name = "nudPoint";
-            this.nudPoint.Size = new System.Drawing.Size(75, 30);
+            this.nudPoint.Size = new System.Drawing.Size(56, 26);
             this.nudPoint.TabIndex = 5;
             this.nudPoint.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -163,28 +199,29 @@
             this.lblCusID.AutoSize = true;
             this.lblCusID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusID.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblCusID.Location = new System.Drawing.Point(24, 39);
+            this.lblCusID.Location = new System.Drawing.Point(18, 32);
+            this.lblCusID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCusID.Name = "lblCusID";
-            this.lblCusID.Size = new System.Drawing.Size(79, 23);
+            this.lblCusID.Size = new System.Drawing.Size(66, 19);
             this.lblCusID.TabIndex = 4;
             this.lblCusID.Text = "Mã KH:";
             // 
             // txtCusID
             // 
             this.txtCusID.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusID.Location = new System.Drawing.Point(133, 37);
-            this.txtCusID.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCusID.Location = new System.Drawing.Point(100, 30);
+            this.txtCusID.Margin = new System.Windows.Forms.Padding(2);
             this.txtCusID.Name = "txtCusID";
-            this.txtCusID.Size = new System.Drawing.Size(191, 30);
+            this.txtCusID.Size = new System.Drawing.Size(145, 26);
             this.txtCusID.TabIndex = 2;
             // 
             // txtCusAddress
             // 
             this.txtCusAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusAddress.Location = new System.Drawing.Point(133, 146);
-            this.txtCusAddress.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCusAddress.Location = new System.Drawing.Point(100, 116);
+            this.txtCusAddress.Margin = new System.Windows.Forms.Padding(2);
             this.txtCusAddress.Name = "txtCusAddress";
-            this.txtCusAddress.Size = new System.Drawing.Size(192, 30);
+            this.txtCusAddress.Size = new System.Drawing.Size(145, 26);
             this.txtCusAddress.TabIndex = 2;
             // 
             // lblCusINumber
@@ -192,49 +229,34 @@
             this.lblCusINumber.AutoSize = true;
             this.lblCusINumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusINumber.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblCusINumber.Location = new System.Drawing.Point(24, 226);
+            this.lblCusINumber.Location = new System.Drawing.Point(18, 184);
+            this.lblCusINumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCusINumber.Name = "lblCusINumber";
-            this.lblCusINumber.Size = new System.Drawing.Size(77, 23);
+            this.lblCusINumber.Size = new System.Drawing.Size(65, 19);
             this.lblCusINumber.TabIndex = 4;
             this.lblCusINumber.Text = "CMND:";
-            // 
-            // txtCusName
-            // 
-            this.txtCusName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusName.Location = new System.Drawing.Point(133, 75);
-            this.txtCusName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCusName.Name = "txtCusName";
-            this.txtCusName.Size = new System.Drawing.Size(191, 30);
-            this.txtCusName.TabIndex = 2;
             // 
             // lblCusBirth
             // 
             this.lblCusBirth.AutoSize = true;
             this.lblCusBirth.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusBirth.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblCusBirth.Location = new System.Drawing.Point(24, 108);
+            this.lblCusBirth.Location = new System.Drawing.Point(18, 88);
+            this.lblCusBirth.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCusBirth.Name = "lblCusBirth";
-            this.lblCusBirth.Size = new System.Drawing.Size(99, 23);
+            this.lblCusBirth.Size = new System.Drawing.Size(81, 19);
             this.lblCusBirth.TabIndex = 4;
             this.lblCusBirth.Text = "Ngày sinh:";
-            // 
-            // txtCusPhone
-            // 
-            this.txtCusPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusPhone.Location = new System.Drawing.Point(133, 185);
-            this.txtCusPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCusPhone.Name = "txtCusPhone";
-            this.txtCusPhone.Size = new System.Drawing.Size(192, 30);
-            this.txtCusPhone.TabIndex = 2;
             // 
             // lblCusPhone
             // 
             this.lblCusPhone.AutoSize = true;
             this.lblCusPhone.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusPhone.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblCusPhone.Location = new System.Drawing.Point(24, 187);
+            this.lblCusPhone.Location = new System.Drawing.Point(18, 152);
+            this.lblCusPhone.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCusPhone.Name = "lblCusPhone";
-            this.lblCusPhone.Size = new System.Drawing.Size(69, 23);
+            this.lblCusPhone.Size = new System.Drawing.Size(56, 19);
             this.lblCusPhone.TabIndex = 4;
             this.lblCusPhone.Text = "Số ĐT:";
             // 
@@ -243,49 +265,34 @@
             this.lblCusPoint.AutoSize = true;
             this.lblCusPoint.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusPoint.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblCusPoint.Location = new System.Drawing.Point(24, 277);
+            this.lblCusPoint.Location = new System.Drawing.Point(18, 225);
+            this.lblCusPoint.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCusPoint.Name = "lblCusPoint";
-            this.lblCusPoint.Size = new System.Drawing.Size(126, 23);
+            this.lblCusPoint.Size = new System.Drawing.Size(102, 19);
             this.lblCusPoint.TabIndex = 4;
             this.lblCusPoint.Text = "Điểm thưởng:";
-            // 
-            // txtCusBirth
-            // 
-            this.txtCusBirth.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusBirth.Location = new System.Drawing.Point(133, 109);
-            this.txtCusBirth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCusBirth.Name = "txtCusBirth";
-            this.txtCusBirth.Size = new System.Drawing.Size(191, 30);
-            this.txtCusBirth.TabIndex = 2;
             // 
             // lblCusAddress
             // 
             this.lblCusAddress.AutoSize = true;
             this.lblCusAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusAddress.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblCusAddress.Location = new System.Drawing.Point(24, 146);
+            this.lblCusAddress.Location = new System.Drawing.Point(18, 119);
+            this.lblCusAddress.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCusAddress.Name = "lblCusAddress";
-            this.lblCusAddress.Size = new System.Drawing.Size(75, 23);
+            this.lblCusAddress.Size = new System.Drawing.Size(61, 19);
             this.lblCusAddress.TabIndex = 4;
             this.lblCusAddress.Text = "Địa chỉ:";
-            // 
-            // txtCusINumber
-            // 
-            this.txtCusINumber.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCusINumber.Location = new System.Drawing.Point(133, 224);
-            this.txtCusINumber.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtCusINumber.Name = "txtCusINumber";
-            this.txtCusINumber.Size = new System.Drawing.Size(192, 30);
-            this.txtCusINumber.TabIndex = 2;
             // 
             // lblCusName
             // 
             this.lblCusName.AutoSize = true;
             this.lblCusName.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCusName.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.lblCusName.Location = new System.Drawing.Point(24, 75);
+            this.lblCusName.Location = new System.Drawing.Point(18, 61);
+            this.lblCusName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCusName.Name = "lblCusName";
-            this.lblCusName.Size = new System.Drawing.Size(73, 23);
+            this.lblCusName.Size = new System.Drawing.Size(59, 19);
             this.lblCusName.TabIndex = 4;
             this.lblCusName.Text = "Họ tên:";
             // 
@@ -297,10 +304,10 @@
             this.btnShowCustomer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnShowCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnShowCustomer.ForeColor = System.Drawing.Color.White;
-            this.btnShowCustomer.Location = new System.Drawing.Point(526, 16);
-            this.btnShowCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnShowCustomer.Location = new System.Drawing.Point(394, 13);
+            this.btnShowCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.btnShowCustomer.Name = "btnShowCustomer";
-            this.btnShowCustomer.Size = new System.Drawing.Size(91, 32);
+            this.btnShowCustomer.Size = new System.Drawing.Size(68, 26);
             this.btnShowCustomer.TabIndex = 15;
             this.btnShowCustomer.Text = "Xem";
             this.btnShowCustomer.UseVisualStyleBackColor = false;
@@ -312,13 +319,13 @@
             this.dtgvCustomer.AllowUserToDeleteRows = false;
             this.dtgvCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvCustomer.Location = new System.Drawing.Point(516, 55);
-            this.dtgvCustomer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgvCustomer.Location = new System.Drawing.Point(387, 45);
+            this.dtgvCustomer.Margin = new System.Windows.Forms.Padding(2);
             this.dtgvCustomer.Name = "dtgvCustomer";
             this.dtgvCustomer.ReadOnly = true;
             this.dtgvCustomer.RowHeadersWidth = 51;
             this.dtgvCustomer.RowTemplate.Height = 24;
-            this.dtgvCustomer.Size = new System.Drawing.Size(663, 521);
+            this.dtgvCustomer.Size = new System.Drawing.Size(497, 423);
             this.dtgvCustomer.TabIndex = 14;
             // 
             // btnSearchCus
@@ -330,17 +337,17 @@
             this.btnSearchCus.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.btnSearchCus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSearchCus.ForeColor = System.Drawing.Color.White;
-            this.btnSearchCus.Location = new System.Drawing.Point(1137, 22);
-            this.btnSearchCus.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnSearchCus.Location = new System.Drawing.Point(853, 18);
+            this.btnSearchCus.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchCus.Name = "btnSearchCus";
-            this.btnSearchCus.Size = new System.Drawing.Size(27, 26);
+            this.btnSearchCus.Size = new System.Drawing.Size(20, 21);
             this.btnSearchCus.TabIndex = 21;
             this.btnSearchCus.UseVisualStyleBackColor = false;
             this.btnSearchCus.Click += new System.EventHandler(this.btnSearchCus_Click);
             // 
-            // CustomerUC
+            // KhachHang
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.Controls.Add(this.btnSearchCus);
@@ -351,9 +358,9 @@
             this.Controls.Add(this.grpCustomer);
             this.Controls.Add(this.btnShowCustomer);
             this.Controls.Add(this.dtgvCustomer);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "CustomerUC";
-            this.Size = new System.Drawing.Size(1400, 650);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Name = "KhachHang";
+            this.Size = new System.Drawing.Size(1050, 528);
             this.grpCustomer.ResumeLayout(false);
             this.grpCustomer.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPoint)).EndInit();
@@ -373,19 +380,19 @@
         private System.Windows.Forms.GroupBox grpCustomer;
         private System.Windows.Forms.NumericUpDown nudPoint;
         private System.Windows.Forms.Label lblCusID;
-        private System.Windows.Forms.TextBox txtCusID;
         private System.Windows.Forms.TextBox txtCusAddress;
         private System.Windows.Forms.Label lblCusINumber;
-        private System.Windows.Forms.TextBox txtCusName;
         private System.Windows.Forms.Label lblCusBirth;
-        private System.Windows.Forms.TextBox txtCusPhone;
         private System.Windows.Forms.Label lblCusPhone;
         private System.Windows.Forms.Label lblCusPoint;
-        private System.Windows.Forms.TextBox txtCusBirth;
         private System.Windows.Forms.Label lblCusAddress;
-        private System.Windows.Forms.TextBox txtCusINumber;
         private System.Windows.Forms.Label lblCusName;
         private System.Windows.Forms.Button btnShowCustomer;
         private System.Windows.Forms.DataGridView dtgvCustomer;
+        private Patterns.Strategy.MyTextBox txtCusPhone;
+        private System.Windows.Forms.TextBox txtCusID;
+        private Patterns.Strategy.MyTextBox txtCusINumber;
+        private Patterns.Strategy.MyTextBox txtCusName;
+        private Patterns.Strategy.MyTextBox txtCusBirth;
     }
 }

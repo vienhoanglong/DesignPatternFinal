@@ -210,10 +210,17 @@
     <Compile Include="Patterns\Strategy\IMethod.cs" />
     <Compile Include="Patterns\Strategy\Context.cs" />
     <Compile Include="Patterns\Strategy\KhachHang_CRUD.cs" />
+    <Compile Include="Patterns\Strategy\MyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Patterns\Strategy\MyTextBox.Designer.cs">
+      <DependentUpon>MyTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Patterns\Strategy\Phim_CRUD.cs" />
     <Compile Include="Patterns\Strategy\NhanVien_CRUD.cs" />
     <Compile Include="Patterns\Strategy\TaiKhoan_CRUD.cs" />
     <Compile Include="Patterns\Strategy\TheLoai_CRUD.cs" />
+    <Compile Include="Patterns\Strategy\Validator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DoiMK.resx">

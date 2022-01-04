@@ -18,6 +18,14 @@ namespace QuanLiRapPhim.frmAdminUserControls
             NV = new ObjectCRUD("NhanVien");
             InitializeComponent();
             LoadStaff();
+            txtStaffPhone.ValidateType = "Phone";
+            txtStaffName.ValidateType = "String";
+            txtStaffINumber.ValidateType = "Id";
+            txtStaffBirth.ValidateType = "Date";
+            txtStaffPhone.setValidator();
+            txtStaffName.setValidator();
+            txtStaffINumber.setValidator();
+            txtStaffBirth.setValidator();
         }
 
         public NhanVien(BindingSource staffList)
@@ -70,6 +78,27 @@ namespace QuanLiRapPhim.frmAdminUserControls
         }
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
+            if (!txtStaffName.Validate(txtStaffName.Text))
+            {
+                MessageBox.Show("Invalid name!");
+                return;
+            }
+            if (!txtStaffBirth.Validate(txtStaffBirth.Text))
+            {
+                MessageBox.Show("Invalid date of birth!");
+                return;
+            }
+            if (!txtStaffPhone.Validate(txtStaffPhone.Text))
+            {
+                MessageBox.Show("Invalid phone number!");
+                return;
+            }
+
+            if (!txtStaffINumber.Validate(txtStaffINumber.Text))
+            {
+                MessageBox.Show("Invalid ID!");
+                return;
+            }
             string staffId = txtStaffId.Text;
             string staffName = txtStaffName.Text;
             DateTime staffBirth = DateTime.Parse(txtStaffBirth.Text);
@@ -97,6 +126,27 @@ namespace QuanLiRapPhim.frmAdminUserControls
         }
         private void btnUpdateStaff_Click(object sender, EventArgs e)
         {
+            if (!txtStaffName.Validate(txtStaffName.Text))
+            {
+                MessageBox.Show("Invalid name!");
+                return;
+            }
+            if (!txtStaffBirth.Validate(txtStaffBirth.Text))
+            {
+                MessageBox.Show("Invalid date of birth!");
+                return;
+            }
+            if (!txtStaffPhone.Validate(txtStaffPhone.Text))
+            {
+                MessageBox.Show("Invalid phone number!");
+                return;
+            }
+
+            if (!txtStaffINumber.Validate(txtStaffINumber.Text))
+            {
+                MessageBox.Show("Invalid ID!");
+                return;
+            }
             string staffId = txtStaffId.Text;
             string staffName = txtStaffName.Text;
             DateTime staffBirth = DateTime.Parse(txtStaffBirth.Text);

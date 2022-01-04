@@ -16,6 +16,15 @@ namespace QuanLiRapPhim.frmAdminUserControls
             KH = new ObjectCRUD("KhachHang");
             InitializeComponent();
             LoadCustomer();
+            txtCusPhone.ValidateType = "Phone";
+            txtCusName.ValidateType = "String";
+            txtCusINumber.ValidateType = "Id";
+            txtCusBirth.ValidateType = "Date";
+            txtCusPhone.setValidator();
+            txtCusName.setValidator();
+            txtCusINumber.setValidator();
+            txtCusBirth.setValidator();
+
         }
 
         void LoadCustomer()
@@ -61,6 +70,27 @@ namespace QuanLiRapPhim.frmAdminUserControls
         }
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
+            if (!txtCusName.Validate(txtCusName.Text))
+            {
+                MessageBox.Show("Invalid name!");
+                return;
+            }
+            if (!txtCusBirth.Validate(txtCusBirth.Text))
+            {
+                MessageBox.Show("Invalid date of birth!");
+                return;
+            }
+            if (!txtCusPhone.Validate(txtCusPhone.Text))
+            {
+                MessageBox.Show("Invalid phone number!");
+                return;
+            }
+
+            if (!txtCusINumber.Validate(txtCusINumber.Text))
+            {
+                MessageBox.Show("Invalid ID!");
+                return;
+            }
             string cusID = txtCusID.Text;
             string cusName = txtCusName.Text;
             DateTime cusBirth = DateTime.Parse(txtCusBirth.Text);
@@ -87,6 +117,28 @@ namespace QuanLiRapPhim.frmAdminUserControls
         }
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
+            if (!txtCusName.Validate(txtCusName.Text))
+            {
+                MessageBox.Show("Invalid name!");
+                return;
+            }
+            if (!txtCusBirth.Validate(txtCusBirth.Text))
+            {
+                MessageBox.Show("Invalid date of birth!");
+                return;
+            }
+            if (!txtCusPhone.Validate(txtCusPhone.Text))
+            {
+                MessageBox.Show("Invalid phone number!");
+                return;
+            }
+            
+            if (!txtCusINumber.Validate(txtCusINumber.Text))
+            {
+                MessageBox.Show("Invalid ID!");
+                return;
+            }
+            
             string cusID = txtCusID.Text;
             string cusName = txtCusName.Text;
             DateTime cusBirth = DateTime.Parse(txtCusBirth.Text);

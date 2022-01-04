@@ -1,4 +1,5 @@
 ﻿using QuanLiRapPhim.frmAdminUserControls;
+using QuanLiRapPhim.Patterns.Factory;
 using System;
 using System.Linq;
 using System.Windows.Forms;
@@ -7,6 +8,7 @@ namespace QuanLiRapPhim
 {
     public partial class BanQuanLi : Form
     {
+        
         public BanQuanLi()
         {
             InitializeComponent();
@@ -16,8 +18,8 @@ namespace QuanLiRapPhim
         {
             this.Text = "Dữ Liệu";
             pnAdmin.Controls.Clear();
-            QuanLi dataUC = new QuanLi();
-            QuanLi dataUc = dataUC;
+            UserControl dataUc = FormFactory.CreateForm(FormType.QuanLi);
+            //UserControl dataUc = dataUC;
             dataUc.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(dataUc);
         }
@@ -26,8 +28,8 @@ namespace QuanLiRapPhim
         {
             this.Text = "Nhân Viên";
             pnAdmin.Controls.Clear();
-            NhanVien staffUC = new NhanVien();
-            NhanVien staffUc = staffUC;
+            UserControl staffUc = FormFactory.CreateForm(FormType.NhanVien);
+            //NhanVien staffUc = staffUC;
             staffUc.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(staffUc);
         }
@@ -36,8 +38,8 @@ namespace QuanLiRapPhim
         {
             this.Text = "Khách Hàng";
             pnAdmin.Controls.Clear();
-            frmAdminUserControls.KhachHang customerUC = new frmAdminUserControls.KhachHang();
-            frmAdminUserControls.KhachHang customerUc = customerUC;
+            UserControl customerUc = FormFactory.CreateForm(FormType.KhachHang);
+            //frmAdminUserControls.KhachHang customerUc = customerUC;
             customerUc.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(customerUc);
         }
@@ -46,10 +48,8 @@ namespace QuanLiRapPhim
         {
             this.Text = "Tài Khoản";
             pnAdmin.Controls.Clear();
-            TaiKhoan accountUc = new TaiKhoan
-            {
-                Dock = DockStyle.Fill
-            };
+            UserControl accountUc = FormFactory.CreateForm(FormType.TaiKhoan);
+            accountUc.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(accountUc);
         }
     }

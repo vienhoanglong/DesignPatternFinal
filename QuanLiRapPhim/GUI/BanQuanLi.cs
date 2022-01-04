@@ -20,7 +20,7 @@ namespace QuanLiRapPhim
             pnAdmin.Controls.Clear();
             UserControl dataUc = FormFactory.CreateForm(FormType.QuanLi);
             //UserControl dataUc = dataUC;
-            dataUc.Dock = DockStyle.Fill;
+            //dataUc.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(dataUc);
         }
 
@@ -30,7 +30,7 @@ namespace QuanLiRapPhim
             pnAdmin.Controls.Clear();
             UserControl staffUc = FormFactory.CreateForm(FormType.NhanVien);
             //NhanVien staffUc = staffUC;
-            staffUc.Dock = DockStyle.Fill;
+            //staffUc.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(staffUc);
         }
 
@@ -40,7 +40,7 @@ namespace QuanLiRapPhim
             pnAdmin.Controls.Clear();
             UserControl customerUc = FormFactory.CreateForm(FormType.KhachHang);
             //frmAdminUserControls.KhachHang customerUc = customerUC;
-            customerUc.Dock = DockStyle.Fill;
+            //customerUc.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(customerUc);
         }
 
@@ -49,7 +49,7 @@ namespace QuanLiRapPhim
             this.Text = "Tài Khoản";
             pnAdmin.Controls.Clear();
             UserControl accountUc = FormFactory.CreateForm(FormType.TaiKhoan);
-            accountUc.Dock = DockStyle.Fill;
+            //accountUc.Dock = DockStyle.Fill;
             pnAdmin.Controls.Add(accountUc);
         }
     }

@@ -204,6 +204,8 @@
       <DependentUpon>KhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Patterns\Command\Ghe.cs" />
+    <Compile Include="Patterns\Command\ICommand.cs" />
     <Compile Include="Patterns\Factory\FormFactory.cs" />
     <Compile Include="Patterns\Strategy\IMethod.cs" />
     <Compile Include="Patterns\Strategy\Context.cs" />

@@ -1,5 +1,6 @@
 ﻿using QuanLiRapPhim.DAO;
 using QuanLiRapPhim.DTO;
+using QuanLiRapPhim.Patterns.Command;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -11,6 +12,8 @@ namespace QuanLiRapPhim
 {
     public partial class BanVe : Form
     {
+        Dictionary<string, ICommand> commandstore;
+
         readonly int SIZE = 30;//Size của ghế
         readonly int GAP = 7;//Khoảng cách giữa các ghế
 
@@ -34,7 +37,7 @@ namespace QuanLiRapPhim
         public BanVe(ThoiGianChieu showTimes, Phim movie)
         {
             InitializeComponent();
-
+            commandstore = new Dictionary<string, ICommand>();
             Times = showTimes;
             Movie = movie;
         }
@@ -94,7 +97,7 @@ namespace QuanLiRapPhim
             flpSeat.Controls.Clear();
             for (int i = 0; i < list.Count; i++)
             {
-                Button btnChair = new Button() { Width = SIZE + 20, Height = SIZE };
+                Button btnChair = new Button() { Width = SIZE + 40, Height = SIZE };
                 btnChair.Text = list[i].SeatName;
                 if (list[i].Status == 1)
                     btnChair.BackColor = Color.Red;
@@ -104,18 +107,27 @@ namespace QuanLiRapPhim
                 flpSeat.Controls.Add(btnChair);
 
                 btnChair.Tag = list[i];
+                if (!commandstore.ContainsKey(btnChair.Text))
+                {
+                    Seat tempSeat = new Seat(btnChair);
+                    commandstore.Add(btnChair.Text, new SeatCommand(tempSeat));
+                }
             }
         }
 
         private void BtnSeat_Click(object sender, EventArgs e)
         {
             Button btnChair = sender as Button;
+            ICommand command = null;
             if (btnChair.BackColor == Color.White)
             {
+                string slot = btnChair.Text;
+                commandstore.TryGetValue(slot,out command);
+                command.executeOn();
                 grpLoaiVe.Enabled = true;
                 rdoAdult.Checked = true;
 
-                btnChair.BackColor = Color.Black;
+                //btnChair.BackColor = Color.Black;
                 Ve ticket = btnChair.Tag as Ve;
 
                 ticket.Price = ticketPrice;
@@ -128,9 +140,12 @@ namespace QuanLiRapPhim
                 plusPoint++;
                 lblPlusPoint.Text = plusPoint + "";
             }
-            else if (btnChair.BackColor == Color.Yellow)
+            else if (btnChair.BackColor == Color.Black)
             {
-                btnChair.BackColor = Color.White;
+                string slot = btnChair.Text;
+                commandstore.TryGetValue(slot, out command);
+                command.executeOff();
+                //btnChair.BackColor = Color.White;
                 Ve ticket = btnChair.Tag as Ve;
 
                 total -= ticket.Price;

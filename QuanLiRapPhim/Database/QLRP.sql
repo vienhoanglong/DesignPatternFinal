@@ -1,8 +1,8 @@
-﻿CREATE DATABASE QLRP
+﻿
+CREATE DATABASE QLRP
 GO
 USE QLRP
 GO
-
 CREATE TABLE NhanVien
 (
 	id VARCHAR(50) PRIMARY KEY,
@@ -639,6 +639,7 @@ INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanV
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'C3',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'C4',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'C5',NULL,0,0.0000);
+INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'C6',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'C7',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'C8',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'C9',NULL,0,0.0000);
@@ -662,6 +663,7 @@ INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanV
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (3,N'LC01',N'E7',NULL,1,59500.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'E8',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'E9',NULL,0,0.0000);
+INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'E10',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'F1',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'F2',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'F3',NULL,0,0.0000);
@@ -677,7 +679,7 @@ INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanV
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'G3',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'G4',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'G5',NULL,0,0.0000);
-INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'G7',NULL,0,0.0000);
+INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'G6',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'G7',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'G8',NULL,0,0.0000);
 INSERT INTO Ve( LoaiVe, idLichChieu, MaGheNgoi, idKhachHang, TrangThai, TienBanVe) VALUES (0,N'LC01',N'G9',NULL,0,0.0000);

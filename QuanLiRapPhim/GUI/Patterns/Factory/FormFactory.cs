@@ -24,15 +24,19 @@ namespace QuanLiRapPhim.Patterns.Factory
             {
                 case FormType.QuanLi:
                     form = new QuanLi();
+                    form.Dock = DockStyle.Fill;
                     break;
                 case FormType.NhanVien:
                     form = new NhanVien();
+                    form.Dock = DockStyle.Fill;
                     break;
                 case FormType.KhachHang:
                     form = new frmAdminUserControls.KhachHang();
+                    form.Dock = DockStyle.Fill;
                     break;
                 case FormType.TaiKhoan:
                     form = new TaiKhoan();
+                    form.Dock = DockStyle.Fill;
                     break;
             }
             return form;

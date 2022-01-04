@@ -204,6 +204,13 @@
       <DependentUpon>KhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Patterns\Strategy\IMethod.cs" />
+    <Compile Include="Patterns\Strategy\Context.cs" />
+    <Compile Include="Patterns\Strategy\KhachHang_CRUD.cs" />
+    <Compile Include="Patterns\Strategy\Phim_CRUD.cs" />
+    <Compile Include="Patterns\Strategy\NhanVien_CRUD.cs" />
+    <Compile Include="Patterns\Strategy\TaiKhoan_CRUD.cs" />
+    <Compile Include="Patterns\Strategy\TheLoai_CRUD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DoiMK.resx">

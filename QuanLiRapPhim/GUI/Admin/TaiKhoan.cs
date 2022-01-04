@@ -1,6 +1,8 @@
 ﻿using QuanLiRapPhim.DAO;
 using QuanLiRapPhim.DTO;
+using QuanLiRapPhim.Patterns.Strategy;
 using System;
+using System.Collections;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -8,10 +10,12 @@ namespace QuanLiRapPhim.frmAdminUserControls
 {
     public partial class TaiKhoan : UserControl
     {
+        private ObjectCRUD TK;
         readonly BindingSource accountList = new BindingSource();
 
         public TaiKhoan()
         {
+            TK = new ObjectCRUD("TaiKhoan");
             InitializeComponent();
             LoadAccount();
         }
@@ -24,7 +28,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
         }
         void LoadAccountList()
         {
-            accountList.DataSource = TaiKhoanDAO.GetAccountList();
+            accountList.DataSource = TK.load();
         }
         private void btnShowAccount_Click(object sender, EventArgs e)
         {
@@ -75,14 +79,17 @@ namespace QuanLiRapPhim.frmAdminUserControls
 
         void InsertAccount(string username, int accountType, string idStaff)
         {
-            if (TaiKhoanDAO.InsertAccount(username, accountType, idStaff))
-            {
-                MessageBox.Show("Thêm tài khoản thành công, mật khẩu mặc định : 1");
-            }
-            else
-            {
-                MessageBox.Show("Thêm tài khoản thất bại");
-            }
+            //if (TaiKhoanDAO.InsertAccount(username, accountType, idStaff))
+            //{
+            //    MessageBox.Show("Thêm tài khoản thành công, mật khẩu mặc định : 1");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Thêm tài khoản thất bại");
+            //}
+            ArrayList data = new ArrayList() { username, accountType, idStaff };
+
+            TK.add(data);
         }
         private void btnInsertAccount_Click(object sender, EventArgs e)
         {
@@ -95,14 +102,18 @@ namespace QuanLiRapPhim.frmAdminUserControls
 
         void UpdateAccount(string username, int accountType)
         {
-            if (TaiKhoanDAO.UpdateAccount(username, accountType))
-            {
-                MessageBox.Show("Sửa tài khoản thành công");
-            }
-            else
-            {
-                MessageBox.Show("Sửa tài khoản thất bại");
-            }
+            //if (TaiKhoanDAO.UpdateAccount(username, accountType))
+            //{
+            //    MessageBox.Show("Sửa tài khoản thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Sửa tài khoản thất bại");
+            //}
+
+            ArrayList data = new ArrayList() { username, accountType };
+
+            TK.update(data);
         }
         private void btnUpdateAccount_Click(object sender, EventArgs e)
         {
@@ -114,14 +125,15 @@ namespace QuanLiRapPhim.frmAdminUserControls
 
         void DeleteAccount(string username)
         {
-            if (TaiKhoanDAO.DeleteAccount(username))
-            {
-                MessageBox.Show("Xóa tài khoản thành công");
-            }
-            else
-            {
-                MessageBox.Show("Xóa tài khoản thất bại");
-            }
+            //if (TaiKhoanDAO.DeleteAccount(username))
+            //{
+            //    MessageBox.Show("Xóa tài khoản thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Xóa tài khoản thất bại");
+            //}
+            TK.delete(username);
         }
         private void btnDeleteAccount_Click(object sender, EventArgs e)
         {

@@ -1,5 +1,7 @@
 ﻿using QuanLiRapPhim.DAO;
+using QuanLiRapPhim.Patterns.Strategy;
 using System;
+using System.Collections;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -7,10 +9,12 @@ namespace QuanLiRapPhim.frmAdminUserControls.DataUserControl
 {
     public partial class TheLoai : UserControl
     {
+        private ObjectCRUD TL;
         readonly BindingSource genreList = new BindingSource();
 
         public TheLoai()
         {
+            TL = new ObjectCRUD("TheLoai");
             InitializeComponent();
             LoadGenre();
         }
@@ -23,7 +27,7 @@ namespace QuanLiRapPhim.frmAdminUserControls.DataUserControl
         }
         void LoadGenreList()
         {
-            genreList.DataSource = TheLoaiDAO.GetGenre();
+            genreList.DataSource = TL.load();
         }
         void AddGenreBinding()
         {
@@ -38,14 +42,17 @@ namespace QuanLiRapPhim.frmAdminUserControls.DataUserControl
 
         void InsertGenre(string id, string name, string desc)
         {
-            if (TheLoaiDAO.InsertGenre(id, name, desc))
-            {
-                MessageBox.Show("Thêm thể loại thành công");
-            }
-            else
-            {
-                MessageBox.Show("Thêm thể loại thất bại");
-            }
+            //if (TheLoaiDAO.InsertGenre(id, name, desc))
+            //{
+            //    MessageBox.Show("Thêm thể loại thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Thêm thể loại thất bại");
+            //}
+            ArrayList data = new ArrayList() { id, name, desc};
+
+            TL.add(data);
         }
         private void btnInsertGenre_Click(object sender, EventArgs e)
         {
@@ -58,14 +65,17 @@ namespace QuanLiRapPhim.frmAdminUserControls.DataUserControl
 
         void UpdateGenre(string id, string name, string desc)
         {
-            if (TheLoaiDAO.UpdateGenre(id, name, desc))
-            {
-                MessageBox.Show("Sửa thể loại thành công");
-            }
-            else
-            {
-                MessageBox.Show("Sửa thể loại thất bại");
-            }
+            //if (TheLoaiDAO.UpdateGenre(id, name, desc))
+            //{
+            //    MessageBox.Show("Sửa thể loại thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Sửa thể loại thất bại");
+            //}
+            ArrayList data = new ArrayList() { id, name, desc };
+
+            TL.update(data);
         }
         private void btnUpdateGenre_Click(object sender, EventArgs e)
         {
@@ -78,14 +88,15 @@ namespace QuanLiRapPhim.frmAdminUserControls.DataUserControl
 
         void DeleteGenre(string id)
         {
-            if (TheLoaiDAO.DeleteGenre(id))
-            {
-                MessageBox.Show("Xóa thể loại thành công");
-            }
-            else
-            {
-                MessageBox.Show("Xóa thể loại thất bại");
-            }
+            //if (TheLoaiDAO.DeleteGenre(id))
+            //{
+            //    MessageBox.Show("Xóa thể loại thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Xóa thể loại thất bại");
+            //}
+            TL.delete(id);
         }
         private void btnDeleteGenre_Click(object sender, EventArgs e)
         {

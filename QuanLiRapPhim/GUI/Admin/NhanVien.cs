@@ -1,5 +1,7 @@
 ﻿using QuanLiRapPhim.DAO;
+using QuanLiRapPhim.Patterns.Strategy;
 using System;
+using System.Collections;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -8,10 +10,12 @@ namespace QuanLiRapPhim.frmAdminUserControls
 {
     public partial class NhanVien : UserControl
     {
+        private ObjectCRUD NV;
         readonly BindingSource staffList = new BindingSource();
 
         public NhanVien()
         {
+            NV = new ObjectCRUD("NhanVien");
             InitializeComponent();
             LoadStaff();
         }
@@ -30,7 +34,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
 
         void LoadStaffList()
         {
-            staffList.DataSource = NhanVienDAO.GetListStaff();
+            staffList.DataSource = NV.load();
         }
 
         private void btnShowStaff_Click(object sender, EventArgs e)
@@ -52,14 +56,17 @@ namespace QuanLiRapPhim.frmAdminUserControls
         //Thêm Staff
         void AddStaff(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            if (NhanVienDAO.InsertStaff(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
-            {
-                MessageBox.Show("Thêm nhân viên thành công");
-            }
-            else
-            {
-                MessageBox.Show("Thêm nhân viên thất bại");
-            }
+            //if (NhanVienDAO.InsertStaff(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
+            //{
+            //    MessageBox.Show("Thêm nhân viên thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Thêm nhân viên thất bại");
+            //}
+            ArrayList data = new ArrayList() { id, hoTen, ngaySinh, diaChi, sdt, cmnd };
+
+            NV.add(data);
         }
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
@@ -76,14 +83,17 @@ namespace QuanLiRapPhim.frmAdminUserControls
         //Sửa Staff
         void UpdateStaff(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            if (NhanVienDAO.UpdateStaff(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
-            {
-                MessageBox.Show("Sửa nhân viên thành công");
-            }
-            else
-            {
-                MessageBox.Show("Sửa nhân viên thất bại");
-            }
+            //if (NhanVienDAO.UpdateStaff(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
+            //{
+            //    MessageBox.Show("Sửa nhân viên thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Sửa nhân viên thất bại");
+            //}
+            ArrayList data = new ArrayList() { id, hoTen, ngaySinh, diaChi, sdt, cmnd };
+
+            NV.update(data);
         }
         private void btnUpdateStaff_Click(object sender, EventArgs e)
         {
@@ -100,14 +110,15 @@ namespace QuanLiRapPhim.frmAdminUserControls
         //Xóa Staff
         void DeleteStaff(string id)
         {
-            if (NhanVienDAO.DeleteStaff(id))
-            {
-                MessageBox.Show("Xóa nhân viên thành công");
-            }
-            else
-            {
-                MessageBox.Show("Xóa nhân viên thất bại");
-            }
+            //if (NhanVienDAO.DeleteStaff(id))
+            //{
+            //    MessageBox.Show("Xóa nhân viên thành công");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Xóa nhân viên thất bại");
+            //}
+            NV.delete(id);
         }
         private void btnDeleteStaff_Click(object sender, EventArgs e)
         {

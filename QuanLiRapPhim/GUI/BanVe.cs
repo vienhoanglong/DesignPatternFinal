@@ -127,8 +127,8 @@ namespace QuanLiRapPhim
             ICommand command = null;
             if (btnChair.BackColor == Color.White)
             {
-                veXemPhim.addGhe(btnChair.Text);
-                Console.WriteLine(veXemPhim.cost());
+                //veXemPhim.addGhe(btnChair.Text);
+                //Console.WriteLine(veXemPhim.cost());
                 string slot = btnChair.Text;
                 commandstore.TryGetValue(slot,out command);
                 command.executeOn();
@@ -136,7 +136,7 @@ namespace QuanLiRapPhim
                 grpLoaiVe.Enabled = true;
                 rdoAdult.Checked = true;
 
-                //btnChair.BackColor = Color.Black;
+               // btnChair.BackColor = Color.Black;
                 Ve ticket = btnChair.Tag as Ve;
                 
                 ticket.Price = ticketPrice;
@@ -144,6 +144,7 @@ namespace QuanLiRapPhim
                 total += ticketPrice;
                 payment = total - discount;
                 ticket.Type = 1;
+                veXemPhim.setGiaBan(total);
 
                 listSeatSelected.Add(btnChair);
                 plusPoint++;
@@ -151,8 +152,8 @@ namespace QuanLiRapPhim
             }
             else if (btnChair.BackColor == Color.Black)
             {
-                veXemPhim.removeGhe(btnChair.Text);
-                Console.WriteLine(veXemPhim.cost());
+                //veXemPhim.removeGhe(btnChair.Text);
+                //Console.WriteLine(veXemPhim.cost());
 
                 string slot = btnChair.Text;
                 commandstore.TryGetValue(slot, out command);
@@ -165,7 +166,7 @@ namespace QuanLiRapPhim
                 ticket.Price = 0;
                 displayPrice = ticket.Price;
                 ticket.Type = 0;
-
+                veXemPhim.setGiaBan(total);
                 listSeatSelected.Remove(btnChair);
                 plusPoint--;
                 lblPlusPoint.Text = plusPoint + "";
@@ -213,7 +214,10 @@ namespace QuanLiRapPhim
             discount = 0;
             payment = 0;
             plusPoint = 0;
+            veXemPhim = new VeXemPhim(Movie.Name, Times.Time);
+            commandstore = new Dictionary<string, ICommand>();
             LoadBill();
+
         }
         private void btnPayment_Click(object sender, EventArgs e)
         {
@@ -269,7 +273,7 @@ namespace QuanLiRapPhim
             {
                 if (listSeatSelected.Count == 0) return;
 
-                veXemPhim.setLoaiVe("Student");
+                //veXemPhim.setLoaiVe("Student");
 
                 Ve ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ve;
                 ticket.Type = 2;
@@ -279,7 +283,7 @@ namespace QuanLiRapPhim
                 displayPrice = ticket.Price;
                 total = total + ticket.Price - oldPrice;
                 payment = total - discount;
-
+                veXemPhim.setGiaBan(total);
                 LoadBill();
             }
         }
@@ -289,7 +293,7 @@ namespace QuanLiRapPhim
             {
                 if (listSeatSelected.Count == 0) return;
 
-                veXemPhim.setLoaiVe("Adult");
+                //veXemPhim.setLoaiVe("Adult");
 
 
                 Ve ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ve;
@@ -300,7 +304,7 @@ namespace QuanLiRapPhim
                 displayPrice = ticket.Price;
                 total = total + ticket.Price - oldPrice;
                 payment = total - discount;
-
+                veXemPhim.setGiaBan(total);
                 LoadBill();
             }
         }
@@ -310,7 +314,7 @@ namespace QuanLiRapPhim
             {
                 if (listSeatSelected.Count == 0) return;
 
-                veXemPhim.setLoaiVe("Child");
+                //veXemPhim.setLoaiVe("Child");
 
 
                 Ve ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ve;
@@ -321,7 +325,7 @@ namespace QuanLiRapPhim
                 displayPrice = ticket.Price;
                 total = total + ticket.Price - oldPrice;
                 payment = total - discount;
-
+                veXemPhim.setGiaBan(total);
                 LoadBill();
             }
         }
@@ -403,15 +407,29 @@ namespace QuanLiRapPhim
 
         private void numBap_ValueChanged(object sender, EventArgs e)
         {
-            if(numBap.Value > 0) {
-                veXemPhim = new Bap(veXemPhim, cbBap.Text,(int)numBap.Value);
-            }
+           
+
         }
 
         private void numNuoc_ValueChanged(object sender, EventArgs e)
         {
-            if (numNuoc.Value > 0) { }
+           
 
+        }
+
+        private void btnBapNuoc_Click(object sender, EventArgs e)
+        {
+           if(numBap.Value > 0)
+           {
+                veXemPhim = new Bap(veXemPhim, cbBap.Text, (int)numBap.Value);
+           }
+           if (numNuoc.Value > 0)
+           {
+                veXemPhim = new Nuoc(veXemPhim, cbNuoc.Text, (int)numNuoc.Value);
+           }
+            total = veXemPhim.cost();
+            payment = total - discount;
+            LoadBill();
         }
     }
 }

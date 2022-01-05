@@ -13,35 +13,38 @@ namespace QuanLiRapPhim.Patterns.Decorator
     }
     public abstract class Item : ISubject
     {
-        protected ISubject subject;
-
+        protected ISubject subject { get; set; }
+        //protected int soLuong { get; set; }
         protected Item(ISubject subject, int soLuong)
         {
             this.soLuong = soLuong;
             this.subject = subject;
         }
-
-        public override float cost()
-        {
-            return this.giaBan * this.soLuong + subject.cost();
-        }
     }
     public class Bap : Item
     {
-        private string loaiBap;
+        public string loaiBap;
         public Bap(ISubject subject, string loaiBap, int soLuong) : base(subject, soLuong)
         {
             this.loaiBap = loaiBap;
             this.giaBan = 50000;
         }
+        public override float cost()
+        {
+            return this.giaBan * this.soLuong + subject.cost();
+        }
     }
     public class Nuoc : Item
     {
-        private string loaiNuoc;
+        public string loaiNuoc;
         public Nuoc(ISubject subject, string loaiNuoc, int soLuong) : base(subject, soLuong)
         {
             this.loaiNuoc = loaiNuoc;
-            this.giaBan = 50000;
+            this.giaBan = 30000;
+        }
+        public override float cost()
+        {
+            return this.giaBan * this.soLuong + subject.cost();
         }
     }
    

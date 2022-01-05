@@ -208,6 +208,8 @@
     <Compile Include="Patterns\Command\Ghe.cs" />
     <Compile Include="Patterns\Command\ICommand.cs" />
     <Compile Include="Patterns\Factory\FormFactory.cs" />
+    <Compile Include="Patterns\Proxy\UserService.cs" />
+    <Compile Include="Patterns\Proxy\UserServiceProxy.cs" />
     <Compile Include="Patterns\Strategy\IMethod.cs" />
     <Compile Include="Patterns\Strategy\Context.cs" />
     <Compile Include="Patterns\Strategy\KhachHang_CRUD.cs" />

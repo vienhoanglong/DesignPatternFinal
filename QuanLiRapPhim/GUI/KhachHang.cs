@@ -1,5 +1,6 @@
 ﻿using QuanLiRapPhim.DAO;
 using QuanLiRapPhim.DTO;
+using QuanLiRapPhim.Patterns.Builder;
 using System;
 using System.Data;
 using System.Linq;
@@ -25,8 +26,17 @@ namespace QuanLiRapPhim
                 MessageBox.Show("ID hoặc Họ tên của Khách Hàng không chính xác!\nVui lòng nhập lại thông tin.");
                 return;
             }
-            customer = new DTO.KhachHang(data.Rows[0]);
-
+            //customer = new DTO.KhachHang(data.Rows[0]);
+            DataRow row = data.Rows[0];
+            customer = (DTO.KhachHang)new KhachHangBuilder()
+                .setId(row["id"].ToString())
+                .setAddress(row["DiaChi"].ToString())
+                .setBirth(DateTime.Parse(row["NgaySinh"].ToString()))
+                .setIdentityCard((int)row["CMND"])
+                .setName(row["HoTen"].ToString())
+                .setPhone(row["SDT"].ToString())
+                .setPoint((int)row["DiemTichLuy"])
+                .Build();
             DialogResult = DialogResult.OK;
         }
     }

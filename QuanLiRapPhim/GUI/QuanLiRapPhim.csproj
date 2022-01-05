@@ -204,6 +204,7 @@
       <DependentUpon>KhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Patterns\Builder\IBuilder.cs" />
     <Compile Include="Patterns\Command\Ghe.cs" />
     <Compile Include="Patterns\Command\ICommand.cs" />
     <Compile Include="Patterns\Factory\FormFactory.cs" />
@@ -309,5 +310,6 @@
   <ItemGroup>
     <None Include="Resources\User.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

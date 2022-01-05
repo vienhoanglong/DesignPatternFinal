@@ -4,7 +4,8 @@ using System.Linq;
 
 namespace QuanLiRapPhim.DTO
 {
-    public class NhanVien
+    public interface Human { } 
+    public class NhanVien : Human
     {
         public NhanVien(string iD, string name, DateTime birth, string address,
             string phone, int identityCard)
@@ -17,15 +18,15 @@ namespace QuanLiRapPhim.DTO
             this.IdentityCard = identityCard;
         }
 
-        public NhanVien(DataRow row)
-        {
-            this.ID = row["id"].ToString();
-            this.Name = row["HoTen"].ToString();
-            this.BirthDate = DateTime.Parse(row["NgaySinh"].ToString());
-            this.Address = row["DiaChi"].ToString();
-            this.Phone = row["SDT"].ToString();
-            this.IdentityCard = Int32.Parse(row["CMND"].ToString());
-        }
+        //public NhanVien(DataRow row)
+        //{
+        //    this.ID = row["id"].ToString();
+        //    this.Name = row["HoTen"].ToString();
+        //    this.BirthDate = DateTime.Parse(row["NgaySinh"].ToString());
+        //    this.Address = row["DiaChi"].ToString();
+        //    this.Phone = row["SDT"].ToString();
+        //    this.IdentityCard = Int32.Parse(row["CMND"].ToString());
+        //}
 
         public string ID { get; set; }
 

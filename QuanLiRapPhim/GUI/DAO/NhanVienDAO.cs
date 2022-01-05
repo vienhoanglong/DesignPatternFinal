@@ -1,4 +1,5 @@
 ﻿using QuanLiRapPhim.DTO;
+using QuanLiRapPhim.Patterns.Builder;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,8 +15,18 @@ namespace QuanLiRapPhim.DAO
 			DataTable data = DataProvider.getInstance().ExecuteQuery("SELECT * FROM dbo.NhanVien WHERE id = '" + id + "'");
 			foreach (DataRow item in data.Rows)
 			{
-				staff = new NhanVien(item);
-				return staff;
+
+                //staff = new NhanVien(item);
+                //return staff;
+                staff = (NhanVien)new NhanVienBuilder()
+                    .setId(item["id"].ToString())
+                    .setAddress(item["DiaChi"].ToString())
+                    .setBirth(DateTime.Parse(item["NgaySinh"].ToString()))
+                    .setIdentityCard(Int32.Parse(item["CMND"].ToString()))
+                    .setName(item["HoTen"].ToString())
+                    .setPhone(item["SDT"].ToString()).Build();
+                return staff;
+
 			}
 			return staff;
 		}
@@ -26,9 +37,17 @@ namespace QuanLiRapPhim.DAO
 			DataTable data = DataProvider.getInstance().ExecuteQuery("SELECT * FROM dbo.NhanVien");
 			foreach (DataRow item in data.Rows)
 			{
-				NhanVien staff = new NhanVien(item);
-				staffList.Add(staff);
-			}
+                //NhanVien staff = new NhanVien(item);
+                //staffList.Add(staff);
+                NhanVien staff = (NhanVien)new NhanVienBuilder()
+                    .setId(item["id"].ToString())
+                    .setAddress(item["DiaChi"].ToString())
+                    .setBirth(DateTime.Parse(item["NgaySinh"].ToString()))
+                    .setIdentityCard(Int32.Parse(item["CMND"].ToString()))
+                    .setName(item["HoTen"].ToString())
+                    .setPhone(item["SDT"].ToString()).Build();
+                staffList.Add(staff);
+            }
 			return staffList;
 		}
 

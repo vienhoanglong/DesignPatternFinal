@@ -1,4 +1,6 @@
-﻿using System;
+﻿using QuanLiRapPhim.Patterns.Builder;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 
@@ -6,6 +8,44 @@ namespace QuanLiRapPhim.DAO
 {
     public class KhachHangDAO
     {
+        public static KhachHang GetCusByID(string id)
+        {
+            KhachHang customer = null;
+            DataTable data = DataProvider.getInstance().ExecuteQuery("SELECT * FROM dbo.KhachHang WHERE id = '" + id + "'");
+            foreach (DataRow item in data.Rows)
+            {
+                IBuilder builder = new KhachHangBuilder()
+                    .setId(item["id"].ToString())
+                    .setAddress(item["DiaChi"].ToString())
+                    .setBirth(DateTime.Parse(item["NgaySinh"].ToString()))
+                    .setIdentityCard(Int32.Parse(item["CMND"].ToString()))
+                    .setName(item["HoTen"].ToString())
+                    .setPhone(item["SDT"].ToString())
+                    .setPoint((Int32.Parse(item["DiemTichLuy"].ToString())));
+                customer = (KhachHang)builder.Build();
+                return customer;
+            }
+            return customer;
+        }
+
+        public static List<KhachHang> GetStaff()
+        {
+            List<KhachHang> cusList = new List<KhachHang>();
+            DataTable data = DataProvider.getInstance().ExecuteQuery("SELECT * FROM dbo.KhachHang");
+            foreach (DataRow item in data.Rows)
+            {
+                KhachHang customer = (KhachHang)new KhachHangBuilder()
+                    .setId(item["id"].ToString())
+                    .setAddress(item["DiaChi"].ToString())
+                    .setBirth(DateTime.Parse(item["NgaySinh"].ToString()))
+                    .setIdentityCard(Int32.Parse(item["CMND"].ToString()))
+                    .setName(item["HoTen"].ToString())
+                    .setPhone(item["SDT"].ToString())
+                    .setPoint((Int32.Parse(item["DiemTichLuy"].ToString()))).Build();
+                cusList.Add(customer);
+            }
+            return cusList;
+        }
         public static DataTable GetCustomerMember(string customerID, string name)
         {
             string query = "Select * from KhachHang where id = '" + customerID + "' and HoTen = N'" + name + "'";

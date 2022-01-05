@@ -207,6 +207,8 @@
     <Compile Include="Patterns\Builder\IBuilder.cs" />
     <Compile Include="Patterns\Command\Ghe.cs" />
     <Compile Include="Patterns\Command\ICommand.cs" />
+    <Compile Include="Patterns\Decorator\Subject.cs" />
+    <Compile Include="Patterns\Decorator\Item.cs" />
     <Compile Include="Patterns\Factory\FormFactory.cs" />
     <Compile Include="Patterns\Proxy\UserService.cs" />
     <Compile Include="Patterns\Proxy\UserServiceProxy.cs" />

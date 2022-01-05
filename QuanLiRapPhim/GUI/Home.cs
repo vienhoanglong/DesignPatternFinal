@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace QuanLiRapPhim
 {
-    public partial class Home : Form
+    public partial class Home : Form 
     {
         private UserService service;
         public Home(TaiKhoan acc)

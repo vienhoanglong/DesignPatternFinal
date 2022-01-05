@@ -78,7 +78,7 @@
             this.lblAccountInfo.ForeColor = System.Drawing.Color.DodgerBlue;
             this.lblAccountInfo.Location = new System.Drawing.Point(28, 75);
             this.lblAccountInfo.Name = "lblAccountInfo";
-            this.lblAccountInfo.Size = new System.Drawing.Size(163, 25);
+            this.lblAccountInfo.Size = new System.Drawing.Size(133, 20);
             this.lblAccountInfo.TabIndex = 2;
             this.lblAccountInfo.Text = "Tên tài khoản : ";
             // 
@@ -120,7 +120,7 @@
             this.btnNVQL.Name = "btnNVQL";
             this.btnNVQL.Size = new System.Drawing.Size(132, 76);
             this.btnNVQL.TabIndex = 3;
-            this.btnNVQL.Text = "NV Quản Lí";
+            this.btnNVQL.Text = "Quảng cáo";
             this.btnNVQL.UseVisualStyleBackColor = false;
             // 
             // label1
@@ -131,13 +131,13 @@
             this.label1.ForeColor = System.Drawing.Color.DodgerBlue;
             this.label1.Location = new System.Drawing.Point(28, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 28);
+            this.label1.Size = new System.Drawing.Size(271, 23);
             this.label1.TabIndex = 5;
             this.label1.Text = "Welcome to DieTyCinema";
             // 
-            // FrmHome
+            // Home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(342, 382);
@@ -146,7 +146,7 @@
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Name = "FrmHome";
+            this.Name = "Home";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Trang chủ";
             this.panel1.ResumeLayout(false);

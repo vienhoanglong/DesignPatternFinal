@@ -1,6 +1,7 @@
 ﻿using QuanLiRapPhim.DAO;
 using QuanLiRapPhim.DTO;
 using QuanLiRapPhim.Patterns.Command;
+using QuanLiRapPhim.Patterns.Decorator;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -12,6 +13,7 @@ namespace QuanLiRapPhim
 {
     public partial class BanVe : Form
     {
+        ISubject veXemPhim = null;
         Dictionary<string, ICommand> commandstore;
 
         readonly int SIZE = 30;//Size của ghế
@@ -40,12 +42,16 @@ namespace QuanLiRapPhim
             commandstore = new Dictionary<string, ICommand>();
             Times = showTimes;
             Movie = movie;
+            veXemPhim = new VeXemPhim(movie.Name, showTimes.Time);
+
         }
 
         private void frmTheatre_Load(object sender, EventArgs e)
         {
-            ticketPrice = Times.TicketPrice;
+            cbBap.SelectedIndex = 0; 
+            cbNuoc.SelectedIndex = 0;
 
+            ticketPrice = Times.TicketPrice;
             lblInformation.Text = "DIETY CINEMA | " + Times.CinemaName + " | " + Times.MovieName;
             lblTime.Text = Times.Time.ToShortDateString() + " | "
                 + Times.Time.ToShortTimeString() + " - "
@@ -121,15 +127,18 @@ namespace QuanLiRapPhim
             ICommand command = null;
             if (btnChair.BackColor == Color.White)
             {
+                veXemPhim.addGhe(btnChair.Text);
+                Console.WriteLine(veXemPhim.cost());
                 string slot = btnChair.Text;
                 commandstore.TryGetValue(slot,out command);
                 command.executeOn();
+
                 grpLoaiVe.Enabled = true;
                 rdoAdult.Checked = true;
 
                 //btnChair.BackColor = Color.Black;
                 Ve ticket = btnChair.Tag as Ve;
-
+                
                 ticket.Price = ticketPrice;
                 displayPrice = ticket.Price;
                 total += ticketPrice;
@@ -142,6 +151,9 @@ namespace QuanLiRapPhim
             }
             else if (btnChair.BackColor == Color.Black)
             {
+                veXemPhim.removeGhe(btnChair.Text);
+                Console.WriteLine(veXemPhim.cost());
+
                 string slot = btnChair.Text;
                 commandstore.TryGetValue(slot, out command);
                 command.executeOff();
@@ -157,7 +169,7 @@ namespace QuanLiRapPhim
                 listSeatSelected.Remove(btnChair);
                 plusPoint--;
                 lblPlusPoint.Text = plusPoint + "";
-                grpLoaiVe.Enabled = false;
+                //grpLoaiVe.Enabled = false;
             }
             else if (btnChair.BackColor == Color.Red)
             {
@@ -170,6 +182,7 @@ namespace QuanLiRapPhim
             }
             else
             {
+                grpLoaiVe.Enabled = false;
                 chkCustomer.Enabled = false;
             }
         }
@@ -255,9 +268,12 @@ namespace QuanLiRapPhim
             if (rdoStudent.Checked == true)
             {
                 if (listSeatSelected.Count == 0) return;
+
+                veXemPhim.setLoaiVe("Student");
+
                 Ve ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ve;
                 ticket.Type = 2;
-
+                
                 float oldPrice = ticket.Price;
                 ticket.Price = 0.8f * ticketPrice;
                 displayPrice = ticket.Price;
@@ -272,9 +288,13 @@ namespace QuanLiRapPhim
             if (rdoAdult.Checked == true)
             {
                 if (listSeatSelected.Count == 0) return;
+
+                veXemPhim.setLoaiVe("Adult");
+
+
                 Ve ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ve;
                 ticket.Type = 1;
-
+                
                 float oldPrice = ticket.Price;
                 ticket.Price = ticketPrice;
                 displayPrice = ticket.Price;
@@ -289,9 +309,13 @@ namespace QuanLiRapPhim
             if (rdoChild.Checked == true)
             {
                 if (listSeatSelected.Count == 0) return;
+
+                veXemPhim.setLoaiVe("Child");
+
+
                 Ve ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ve;
                 ticket.Type = 3;
-
+                
                 float oldPrice = ticket.Price;
                 ticket.Price = 0.7f * ticketPrice;
                 displayPrice = ticket.Price;
@@ -375,8 +399,18 @@ namespace QuanLiRapPhim
             }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        
+
+        private void numBap_ValueChanged(object sender, EventArgs e)
         {
+            if(numBap.Value > 0) {
+                veXemPhim = new Bap(veXemPhim, cbBap.Text,(int)numBap.Value);
+            }
+        }
+
+        private void numNuoc_ValueChanged(object sender, EventArgs e)
+        {
+            if (numNuoc.Value > 0) { }
 
         }
     }

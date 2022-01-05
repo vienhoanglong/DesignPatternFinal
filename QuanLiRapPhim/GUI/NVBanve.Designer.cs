@@ -117,9 +117,9 @@
             this.dtpThoiGian.Location = new System.Drawing.Point(113, 39);
             this.dtpThoiGian.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.dtpThoiGian.Name = "dtpThoiGian";
-            this.dtpThoiGian.Size = new System.Drawing.Size(187, 30);
+            this.dtpThoiGian.Size = new System.Drawing.Size(187, 26);
             this.dtpThoiGian.TabIndex = 3;
-            this.dtpThoiGian.Value = new System.DateTime(2018, 4, 15, 10, 8, 45, 0);
+            this.dtpThoiGian.Value = new System.DateTime(2020, 10, 11, 10, 8, 0, 0);
             this.dtpThoiGian.ValueChanged += new System.EventHandler(this.dtpThoiGian_ValueChanged);
             // 
             // cboFilmName
@@ -128,7 +128,7 @@
             this.cboFilmName.Location = new System.Drawing.Point(11, 108);
             this.cboFilmName.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboFilmName.Name = "cboFilmName";
-            this.cboFilmName.Size = new System.Drawing.Size(289, 33);
+            this.cboFilmName.Size = new System.Drawing.Size(289, 28);
             this.cboFilmName.TabIndex = 4;
             this.cboFilmName.SelectedIndexChanged += new System.EventHandler(this.cboFilmName_SelectedIndexChanged);
             // 
@@ -138,7 +138,7 @@
             this.cboFormatFilm.Location = new System.Drawing.Point(11, 182);
             this.cboFormatFilm.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.cboFormatFilm.Name = "cboFormatFilm";
-            this.cboFormatFilm.Size = new System.Drawing.Size(289, 33);
+            this.cboFormatFilm.Size = new System.Drawing.Size(289, 28);
             this.cboFormatFilm.TabIndex = 1;
             this.cboFormatFilm.SelectedIndexChanged += new System.EventHandler(this.cboFormatFilm_SelectedIndexChanged);
             // 
@@ -148,7 +148,7 @@
             this.label6.Location = new System.Drawing.Point(6, 80);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 25);
+            this.label6.Size = new System.Drawing.Size(48, 20);
             this.label6.TabIndex = 4;
             this.label6.Text = "Phim:";
             // 
@@ -159,7 +159,7 @@
             this.label4.Location = new System.Drawing.Point(6, 39);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(103, 25);
+            this.label4.Size = new System.Drawing.Size(81, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "Thời Gian:";
             // 
@@ -169,7 +169,7 @@
             this.label1.Location = new System.Drawing.Point(6, 154);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(116, 25);
+            this.label1.Size = new System.Drawing.Size(92, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Suất Chiếu:";
             // 
@@ -255,9 +255,9 @@
             this.timer1.Interval = 30000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // FrmNVBanve
+            // NVBanve
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MintCream;
             this.ClientSize = new System.Drawing.Size(1013, 443);
@@ -266,7 +266,7 @@
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
-            this.Name = "FrmNVBanve";
+            this.Name = "NVBanve";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lịch Chiếu Phim";
             this.Load += new System.EventHandler(this.frmSeller_Load);

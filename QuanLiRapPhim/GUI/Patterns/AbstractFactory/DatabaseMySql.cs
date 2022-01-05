@@ -23,7 +23,7 @@ namespace QuanLiRapPhim.Patterns.AbstractFactory
                 //lock == synchronized
                 lock (padlock)
                 {
-                    con = new SqlConnection(@"Data Source=.;Initial Catalog=QLRL;Integrated Security=True");
+                    con = new SqlConnection(@"Data Source=.;Initial Catalog=QLRP;Integrated Security=True");
                 }
             }
             return con;

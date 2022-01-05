@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLiRapPhim.Patterns.AbstractFactory;
+using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -27,12 +28,11 @@ namespace QuanLiRapPhim.DAO
             connectionSTR = conn;
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionSTR))
-                {
-                    connection.Open();
-                    result = true;
-                    connection.Close();
-                }
+                SqlConnection connection = (SqlConnection) new DatabaseMySql().createConnection();
+                connection.Open();
+                result = true;
+                connection.Close();
+                
             }
             catch
             {
@@ -47,11 +47,11 @@ namespace QuanLiRapPhim.DAO
             DataTable data = new DataTable();
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionSTR))
-                {
+                SqlConnection connection = (SqlConnection) new DatabaseMySql().createConnection();
+
                 connection.Open();
 
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand command = (SqlCommand) new DatabaseMySql().createCommand(query, connection);
 
                 if (parameter != null)
                 {
@@ -67,12 +67,12 @@ namespace QuanLiRapPhim.DAO
                     }
                 }
 
-                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                SqlDataAdapter adapter =(SqlDataAdapter) new DatabaseMySql().createDataAdapter(command);
 
                 adapter.Fill(data);
 
                 connection.Close();
-                }
+                
             }
             catch(Exception ex)
             {
@@ -87,30 +87,30 @@ namespace QuanLiRapPhim.DAO
             int data = 0;
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionSTR))
+                SqlConnection connection = (SqlConnection)new DatabaseMySql().createConnection();
+
+                connection.Open();
+
+                SqlCommand command = (SqlCommand)new DatabaseMySql().createCommand(query, connection);
+
+                if (parameter != null)
                 {
-                    connection.Open();
-
-                    SqlCommand command = new SqlCommand(query, connection);
-
-                    if (parameter != null)
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
                     {
-                        string[] listPara = query.Split(' ');
-                        int i = 0;
-                        foreach (string item in listPara)
+                        if (item.Contains('@'))
                         {
-                            if (item.Contains('@'))
-                            {
-                                command.Parameters.AddWithValue(item, parameter[i]);
-                                i++;
-                            }
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
                         }
                     }
-
-                    data = command.ExecuteNonQuery();
-
-                    connection.Close();
                 }
+
+                data = command.ExecuteNonQuery();
+
+                connection.Close();
+                
             }
             catch (Exception ex)
             {
@@ -124,30 +124,28 @@ namespace QuanLiRapPhim.DAO
             object data = 0;
             try
             {
-                using (SqlConnection connection = new SqlConnection(connectionSTR))
+                SqlConnection connection = (SqlConnection)new DatabaseMySql().createConnection();
+                connection.Open();
+                SqlCommand command = (SqlCommand)new DatabaseMySql().createCommand(query, connection);
+
+                if (parameter != null)
                 {
-                    connection.Open();
-
-                    SqlCommand command = new SqlCommand(query, connection);
-
-                    if (parameter != null)
+                    string[] listPara = query.Split(' ');
+                    int i = 0;
+                    foreach (string item in listPara)
                     {
-                        string[] listPara = query.Split(' ');
-                        int i = 0;
-                        foreach (string item in listPara)
+                        if (item.Contains('@'))
                         {
-                            if (item.Contains('@'))
-                            {
-                                command.Parameters.AddWithValue(item, parameter[i]);
-                                i++;
-                            }
+                            command.Parameters.AddWithValue(item, parameter[i]);
+                            i++;
                         }
                     }
-
-                    data = command.ExecuteScalar();
-
-                    connection.Close();
                 }
+
+                data = command.ExecuteScalar();
+
+                connection.Close();
+                
             }
             catch (Exception ex)
             {

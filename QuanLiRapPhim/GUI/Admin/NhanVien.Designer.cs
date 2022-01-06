@@ -276,7 +276,7 @@
             this.txtStaffName.Name = "txtStaffName";
             this.txtStaffName.Size = new System.Drawing.Size(144, 26);
             this.txtStaffName.TabIndex = 5;
-            this.txtStaffName.ValidateType = null;
+            //this.txtStaffName.ValidateType = null;
             // 
             // txtStaffBirth
             // 
@@ -285,7 +285,7 @@
             this.txtStaffBirth.Name = "txtStaffBirth";
             this.txtStaffBirth.Size = new System.Drawing.Size(144, 26);
             this.txtStaffBirth.TabIndex = 6;
-            this.txtStaffBirth.ValidateType = null;
+            //this.txtStaffBirth.ValidateType = null;
             // 
             // txtStaffINumber
             // 
@@ -294,7 +294,7 @@
             this.txtStaffINumber.Name = "txtStaffINumber";
             this.txtStaffINumber.Size = new System.Drawing.Size(144, 26);
             this.txtStaffINumber.TabIndex = 7;
-            this.txtStaffINumber.ValidateType = null;
+            ///this.txtStaffINumber.ValidateType = null;
             // 
             // txtStaffPhone
             // 
@@ -303,7 +303,7 @@
             this.txtStaffPhone.Name = "txtStaffPhone";
             this.txtStaffPhone.Size = new System.Drawing.Size(144, 26);
             this.txtStaffPhone.TabIndex = 8;
-            this.txtStaffPhone.ValidateType = null;
+            //this.txtStaffPhone.ValidateType = null;
             // 
             // NhanVien
             // 

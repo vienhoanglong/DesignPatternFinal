@@ -16,14 +16,10 @@ namespace QuanLiRapPhim.frmAdminUserControls
             KH = new ObjectCRUD("KhachHang");
             InitializeComponent();
             LoadCustomer();
-            txtCusPhone.ValidateType = "Phone";
-            txtCusName.ValidateType = "String";
-            txtCusINumber.ValidateType = "Id";
-            txtCusBirth.ValidateType = "Date";
-            txtCusPhone.setValidator();
-            txtCusName.setValidator();
-            txtCusINumber.setValidator();
-            txtCusBirth.setValidator();
+            txtCusPhone.setValidator(Patterns.Factory.ValidatorType.PHONE);
+            txtCusName.setValidator(Patterns.Factory.ValidatorType.STRING);
+            txtCusINumber.setValidator(Patterns.Factory.ValidatorType.ID);
+            txtCusBirth.setValidator(Patterns.Factory.ValidatorType.DATE);
 
         }
 
@@ -70,27 +66,8 @@ namespace QuanLiRapPhim.frmAdminUserControls
         }
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            if (!txtCusName.Validate(txtCusName.Text))
-            {
-                MessageBox.Show("Invalid name!");
-                return;
-            }
-            if (!txtCusBirth.Validate(txtCusBirth.Text))
-            {
-                MessageBox.Show("Invalid date of birth!");
-                return;
-            }
-            if (!txtCusPhone.Validate(txtCusPhone.Text))
-            {
-                MessageBox.Show("Invalid phone number!");
-                return;
-            }
+            if (!validateInput()) return;
 
-            if (!txtCusINumber.Validate(txtCusINumber.Text))
-            {
-                MessageBox.Show("Invalid ID!");
-                return;
-            }
             string cusID = txtCusID.Text;
             string cusName = txtCusName.Text;
             DateTime cusBirth = DateTime.Parse(txtCusBirth.Text);
@@ -117,27 +94,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
         }
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
-            if (!txtCusName.Validate(txtCusName.Text))
-            {
-                MessageBox.Show("Invalid name!");
-                return;
-            }
-            if (!txtCusBirth.Validate(txtCusBirth.Text))
-            {
-                MessageBox.Show("Invalid date of birth!");
-                return;
-            }
-            if (!txtCusPhone.Validate(txtCusPhone.Text))
-            {
-                MessageBox.Show("Invalid phone number!");
-                return;
-            }
-            
-            if (!txtCusINumber.Validate(txtCusINumber.Text))
-            {
-                MessageBox.Show("Invalid ID!");
-                return;
-            }
+            if (!validateInput()) return;
             
             string cusID = txtCusID.Text;
             string cusName = txtCusName.Text;
@@ -183,5 +140,31 @@ namespace QuanLiRapPhim.frmAdminUserControls
 				e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
 			}
 		}
+        
+        public bool validateInput()
+        {
+            if (!txtCusName.Validate(txtCusName.Text))
+            {
+                MessageBox.Show("Invalid name!");
+                return false;
+            }
+            if (!txtCusBirth.Validate(txtCusBirth.Text))
+            {
+                MessageBox.Show("Invalid date of birth!");
+                return false;
+            }
+            if (!txtCusPhone.Validate(txtCusPhone.Text))
+            {
+                MessageBox.Show("Invalid phone number!");
+                return false;
+            }
+
+            if (!txtCusINumber.Validate(txtCusINumber.Text))
+            {
+                MessageBox.Show("Invalid ID!");
+                return false;
+            }
+            return true;
+        }
 	}
 }

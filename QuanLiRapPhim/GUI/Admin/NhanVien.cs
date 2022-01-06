@@ -18,14 +18,11 @@ namespace QuanLiRapPhim.frmAdminUserControls
             NV = new ObjectCRUD("NhanVien");
             InitializeComponent();
             LoadStaff();
-            txtStaffPhone.ValidateType = "Phone";
-            txtStaffName.ValidateType = "String";
-            txtStaffINumber.ValidateType = "Id";
-            txtStaffBirth.ValidateType = "Date";
-            txtStaffPhone.setValidator();
-            txtStaffName.setValidator();
-            txtStaffINumber.setValidator();
-            txtStaffBirth.setValidator();
+            txtStaffPhone.setValidator(Patterns.Factory.ValidatorType.PHONE);
+            txtStaffName.setValidator(Patterns.Factory.ValidatorType.STRING);
+            txtStaffINumber.setValidator(Patterns.Factory.ValidatorType.ID);
+            txtStaffBirth.setValidator(Patterns.Factory.ValidatorType.DATE);
+
         }
 
         public NhanVien(BindingSource staffList)
@@ -78,27 +75,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
         }
         private void btnAddStaff_Click(object sender, EventArgs e)
         {
-            if (!txtStaffName.Validate(txtStaffName.Text))
-            {
-                MessageBox.Show("Invalid name!");
-                return;
-            }
-            if (!txtStaffBirth.Validate(txtStaffBirth.Text))
-            {
-                MessageBox.Show("Invalid date of birth!");
-                return;
-            }
-            if (!txtStaffPhone.Validate(txtStaffPhone.Text))
-            {
-                MessageBox.Show("Invalid phone number!");
-                return;
-            }
-
-            if (!txtStaffINumber.Validate(txtStaffINumber.Text))
-            {
-                MessageBox.Show("Invalid ID!");
-                return;
-            }
+            if (!validateInput()) return;
             string staffId = txtStaffId.Text;
             string staffName = txtStaffName.Text;
             DateTime staffBirth = DateTime.Parse(txtStaffBirth.Text);
@@ -126,27 +103,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
         }
         private void btnUpdateStaff_Click(object sender, EventArgs e)
         {
-            if (!txtStaffName.Validate(txtStaffName.Text))
-            {
-                MessageBox.Show("Invalid name!");
-                return;
-            }
-            if (!txtStaffBirth.Validate(txtStaffBirth.Text))
-            {
-                MessageBox.Show("Invalid date of birth!");
-                return;
-            }
-            if (!txtStaffPhone.Validate(txtStaffPhone.Text))
-            {
-                MessageBox.Show("Invalid phone number!");
-                return;
-            }
-
-            if (!txtStaffINumber.Validate(txtStaffINumber.Text))
-            {
-                MessageBox.Show("Invalid ID!");
-                return;
-            }
+            if (!validateInput()) return;
             string staffId = txtStaffId.Text;
             string staffName = txtStaffName.Text;
             DateTime staffBirth = DateTime.Parse(txtStaffBirth.Text);
@@ -192,6 +149,32 @@ namespace QuanLiRapPhim.frmAdminUserControls
                 btnSearchStaff.PerformClick();
                 e.SuppressKeyPress = true;//Tắt tiếng *ting của windows
             }
+        }
+
+        public bool validateInput()
+        {
+            if (!txtStaffName.Validate(txtStaffName.Text))
+            {
+                MessageBox.Show("Invalid name!");
+                return false;
+            }
+            if (!txtStaffBirth.Validate(txtStaffBirth.Text))
+            {
+                MessageBox.Show("Invalid date of birth!");
+                return false;
+            }
+            if (!txtStaffPhone.Validate(txtStaffPhone.Text))
+            {
+                MessageBox.Show("Invalid phone number!");
+                return false;
+            }
+
+            if (!txtStaffINumber.Validate(txtStaffINumber.Text))
+            {
+                MessageBox.Show("Invalid ID!");
+                return false;
+            }
+            return true;
         }
     }
 }

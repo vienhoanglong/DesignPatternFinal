@@ -150,7 +150,7 @@
             this.txtCusName.Name = "txtCusName";
             this.txtCusName.Size = new System.Drawing.Size(145, 26);
             this.txtCusName.TabIndex = 9;
-            this.txtCusName.ValidateType = null;
+            //this.txtCusName.validateType = null;
             // 
             // txtCusBirth
             // 
@@ -159,7 +159,7 @@
             this.txtCusBirth.Name = "txtCusBirth";
             this.txtCusBirth.Size = new System.Drawing.Size(145, 26);
             this.txtCusBirth.TabIndex = 8;
-            this.txtCusBirth.ValidateType = null;
+            //this.txtCusBirth.ValidateType = null;
             // 
             // txtCusINumber
             // 
@@ -168,7 +168,7 @@
             this.txtCusINumber.Name = "txtCusINumber";
             this.txtCusINumber.Size = new System.Drawing.Size(145, 26);
             this.txtCusINumber.TabIndex = 7;
-            this.txtCusINumber.ValidateType = null;
+            //this.txtCusINumber.ValidateType = null;
             // 
             // txtCusPhone
             // 
@@ -177,7 +177,7 @@
             this.txtCusPhone.Name = "txtCusPhone";
             this.txtCusPhone.Size = new System.Drawing.Size(145, 26);
             this.txtCusPhone.TabIndex = 6;
-            this.txtCusPhone.ValidateType = null;
+            //this.txtCusPhone.ValidateType = null;
             // 
             // nudPoint
             // 

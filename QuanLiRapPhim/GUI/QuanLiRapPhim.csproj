@@ -212,6 +212,7 @@
     <Compile Include="Patterns\Decorator\Subject.cs" />
     <Compile Include="Patterns\Decorator\Item.cs" />
     <Compile Include="Patterns\Factory\FormFactory.cs" />
+    <Compile Include="Patterns\Factory\ValidatorFactory.cs" />
     <Compile Include="Patterns\Proxy\UserService.cs" />
     <Compile Include="Patterns\Proxy\UserServiceProxy.cs" />
     <Compile Include="Patterns\Strategy\IMethod.cs" />

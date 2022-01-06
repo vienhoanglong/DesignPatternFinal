@@ -9,26 +9,30 @@ namespace QuanLiRapPhim.DAO
 {
     public class DataProvider
     {
-
-        private DataProvider() { }
+        private static readonly object padlock = new object();
+        private string connectionSTR = "Data Source=.;Initial Catalog=QLRP;Integrated Security=True";
         private static DataProvider instance;
+        private DataProvider() { }
         public static DataProvider getInstance()
         {
             if (instance == null)
             {
-                instance = new DataProvider();
+                //lock == synchronized
+                lock (padlock)
+                {
+                    instance = new DataProvider();
+                }
             }
             return instance;
         }
 
-        private static string connectionSTR = "Data Source=.;Initial Catalog=QLRP;Integrated Security=True";
         public bool TestConnectionSQL(string conn)
         {
             bool result = false;
             connectionSTR = conn;
             try
             {
-                SqlConnection connection = (SqlConnection) new DatabaseMySql().createConnection();
+                SqlConnection connection = (SqlConnection) new DatabaseSqlServer().createConnection();
                 connection.Open();
                 result = true;
                 connection.Close();
@@ -47,11 +51,11 @@ namespace QuanLiRapPhim.DAO
             DataTable data = new DataTable();
             try
             {
-                SqlConnection connection = (SqlConnection) new DatabaseMySql().createConnection();
+                SqlConnection connection = (SqlConnection) new DatabaseSqlServer().createConnection();
 
                 connection.Open();
 
-                SqlCommand command = (SqlCommand) new DatabaseMySql().createCommand(query, connection);
+                SqlCommand command = (SqlCommand) new DatabaseSqlServer().createCommand(query, connection);
 
                 if (parameter != null)
                 {
@@ -67,7 +71,7 @@ namespace QuanLiRapPhim.DAO
                     }
                 }
 
-                SqlDataAdapter adapter =(SqlDataAdapter) new DatabaseMySql().createDataAdapter(command);
+                SqlDataAdapter adapter =(SqlDataAdapter) new DatabaseSqlServer().createDataAdapter(command);
 
                 adapter.Fill(data);
 
@@ -87,11 +91,11 @@ namespace QuanLiRapPhim.DAO
             int data = 0;
             try
             {
-                SqlConnection connection = (SqlConnection)new DatabaseMySql().createConnection();
+                SqlConnection connection = (SqlConnection)new DatabaseSqlServer().createConnection();
 
                 connection.Open();
 
-                SqlCommand command = (SqlCommand)new DatabaseMySql().createCommand(query, connection);
+                SqlCommand command = (SqlCommand)new DatabaseSqlServer().createCommand(query, connection);
 
                 if (parameter != null)
                 {
@@ -124,9 +128,9 @@ namespace QuanLiRapPhim.DAO
             object data = 0;
             try
             {
-                SqlConnection connection = (SqlConnection)new DatabaseMySql().createConnection();
+                SqlConnection connection = (SqlConnection)new DatabaseSqlServer().createConnection();
                 connection.Open();
-                SqlCommand command = (SqlCommand)new DatabaseMySql().createCommand(query, connection);
+                SqlCommand command = (SqlCommand)new DatabaseSqlServer().createCommand(query, connection);
 
                 if (parameter != null)
                 {

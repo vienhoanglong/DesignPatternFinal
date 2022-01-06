@@ -205,7 +205,7 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Patterns\AbstractFactory\DatabaseFactory.cs" />
-    <Compile Include="Patterns\AbstractFactory\DatabaseMySql.cs" />
+    <Compile Include="Patterns\AbstractFactory\DatabaseSqlServer.cs" />
     <Compile Include="Patterns\Builder\IBuilder.cs" />
     <Compile Include="Patterns\Command\Ghe.cs" />
     <Compile Include="Patterns\Command\ICommand.cs" />

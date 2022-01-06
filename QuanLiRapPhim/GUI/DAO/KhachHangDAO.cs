@@ -16,7 +16,7 @@ namespace QuanLiRapPhim.DAO
             {
                 IBuilder builder = new KhachHangBuilder()
                     .setId(item["id"].ToString())
-                    .setAddress(item["DiaChi"].ToString())
+                    .setAddress(item["DiaChi"].ToString())f
                     .setBirth(DateTime.Parse(item["NgaySinh"].ToString()))
                     .setIdentityCard(Int32.Parse(item["CMND"].ToString()))
                     .setName(item["HoTen"].ToString())

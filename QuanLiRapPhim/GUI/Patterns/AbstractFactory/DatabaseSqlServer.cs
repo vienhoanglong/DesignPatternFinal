@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 
 namespace QuanLiRapPhim.Patterns.AbstractFactory
 {
-    class DatabaseMySql : DatabaseFactory
+    class DatabaseSqlServer : DatabaseFactory
     {
         private static readonly object padlock = new object();
-        private SqlConnection con;
+        private static SqlConnection con;
 
 
         //Signleton

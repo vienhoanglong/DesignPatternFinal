@@ -180,6 +180,7 @@
     <Compile Include="Admin\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patterns\State\Track.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -356,8 +357,6 @@
   <ItemGroup>
     <None Include="Resources\next.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Patterns\State\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

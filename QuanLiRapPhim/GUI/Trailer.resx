@@ -117,20 +117,43 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="prev" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\prev.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="trailerVideo.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5BeEhvc3QrU3RhdGUBAAAABERhdGEHAgIAAAAJAwAAAA8DAAAAtwAAAAIB
+        AAAAAQAAAAAAAAAAAAAAAKIAAAAAAwAACAAAAAAABQAAAAAAAADwPwMAAAAAAAUAAAAAAAAAAAAIAAIA
+        AAAAAAMAAQAAAAsA//8DAAAAAAALAP//CAACAAAAAAADADIAAAALAAAACAAKAAAAZgB1AGwAbAAAAAsA
+        AAALAP//CwD//wsA//8LAAAACAACAAAAAAAIAAIAAAAAAAgAAgAAAAAACAACAAAAAAALAAAAeTgAALYk
+        AAAL
+</value>
   </data>
-  <data name="stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnPause.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAABGdBTUEAALGPC/xhBQAABDRJREFUeF7t
+        nceKFkEURgfMKLo1gYr6AoaViiLqVl2oYADzRsGEYenOsBLB1zAuFH0ARRTTxo3iwpxdqWD6DiiK3IaZ
+        6qqu6u574MAw889ft4p/uqtu36oZcBzHcRzHcRzHcQbPMDlfbpMn5Xl5Xz6S7+XX3/I13+NnvOaE5Hfm
+        Sd7DMZgq98pL8pP8WdOP8qLcI6fIXjNGbpLX5HdpDVgMv8mrcqMcLXvDOMkn7Zm0Bialr+VROUF2lhHy
+        oHwnrUFoUmI4IImpUyySD6TV6Zw+lMtk6+GaeEb+kFZHS5DYTstRspVMlzek1bkSvS1nyVbBn2OMaVrT
+        Mi1cKlvBavlZWh1pgyyG1smi2SlTzombkj7skEWySrI4sAJvowz2WlkUXNe+SCvgNstlZIUsgtmyjTe+
+        wcoNcqbMCnNPpkVWgF3ylsw6z2YxYgXWRVnUZIFldckrvtjS18WyUYbLe9IKqMuSr2k0EUUWzgqkD+6T
+        jUA++a20guiD9J0xSM5haQXQJ8llJ4XHTy+l1fhQZTFwSE6WqaENPiC0acUyVJ/LpI/FeMZnNRwiHW+a
+        mH+NG2QyeJBqNRriJNk0E6UVS4iXZRJ4bB8zaZQLK5YQSTolKWWg7sJqMNRcWLGEultGh+IWq7FQc2HF
+        EupZGRVKrD5Iq7FQc2HFEipjErX8jFo4q6E65sKKpY5zZTS2S6uROubCiqWOW2Q0qOq0GqljLqxY6nhM
+        RuOCtBqpYy6sWOoY9YaYIiWaCyuWOt6R0XgirUbqmAsrljo+ltFIUQGaCyuWOr6R0YiV9frXXFix1JEy
+        i2j4QFcbdaD90lFt1EuH3wyrjXoz9OldtVGnd75gqTbqgsWX4NVGXYKzI9VqpI65sGKp42YZDU+TVjtH
+        RsMT/7bRE//A3mqrsVBzYcUSavRHWcC2YquxUHNhxRLqLhkdqn283OCvjAV1IknglACr0RCbKAX7H+ow
+        rFhCTFZAAxzFYDUaYo6SsCPSiiXE9TIZFDm+kFbDQ5WMIIPdxiJHjsBIfvZHn4vQ/7hfJmesJDVoBdAH
+        GytEBwqxrSD6INPcxmCz0F1pBdJlG98sBAulb39rCDY5WkF10VMyG2zbZfuuFViXvClHyqywIZ2N6VaA
+        XZAM3QxZBEtkm0+dqZIFznJZFCtl1w5GWSOLhONxunDUDx8YasKLhiN/2nwZofKouCN+quDonzbeILnx
+        cb9pFdPkdWl1qESZpmY/0icU5tksakpeQRIbi5Hs8+QYsFwv8SAVYlogOwWJKA4VKSHFSgxk4Yips5DP
+        ppNPpTUIKX0lOah7vOwNPAriKIYrMuVCh/fmQSrP+Hp19LwFR0qwgf2c5L9RWAM2FHkP3ou6i2QlAW2H
+        Eivq2bbK45JqIGqQ+Vcg7Dwg/4B8zff4Ga/htexi5Xejl2k5juM4juM4juN0lIGBX2v+WugjrG7QAAAA
+        AElFTkSuQmCC
+</value>
   </data>
-  <data name="play" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\play.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="next" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\next.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

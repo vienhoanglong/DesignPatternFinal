@@ -109,10 +109,10 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.MintCream;
-            this.pictureBox1.Image = global::QuanLiRapPhim.Properties.Resources.User;
+            this.pictureBox1.Image = global::QuanLiRapPhim.Properties.Resources.user;
             this.pictureBox1.Location = new System.Drawing.Point(122, 33);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 94);
+            this.pictureBox1.Size = new System.Drawing.Size(111, 111);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;

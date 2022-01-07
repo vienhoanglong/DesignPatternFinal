@@ -34,7 +34,7 @@
             this.lblAccountInfo = new System.Windows.Forms.Label();
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnNVQL = new System.Windows.Forms.Button();
+            this.btnTrailer = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -102,7 +102,7 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.btnChangePassword);
-            this.panel1.Controls.Add(this.btnNVQL);
+            this.panel1.Controls.Add(this.btnTrailer);
             this.panel1.Controls.Add(this.btnAdmin);
             this.panel1.Controls.Add(this.btnSeller);
             this.panel1.Location = new System.Drawing.Point(13, 121);
@@ -110,19 +110,20 @@
             this.panel1.Size = new System.Drawing.Size(317, 205);
             this.panel1.TabIndex = 4;
             // 
-            // btnNVQL
+            // btnTrailer
             // 
-            this.btnNVQL.BackColor = System.Drawing.Color.DodgerBlue;
-            this.btnNVQL.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btnNVQL.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.btnNVQL.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNVQL.ForeColor = System.Drawing.Color.White;
-            this.btnNVQL.Location = new System.Drawing.Point(165, 108);
-            this.btnNVQL.Name = "btnNVQL";
-            this.btnNVQL.Size = new System.Drawing.Size(132, 76);
-            this.btnNVQL.TabIndex = 3;
-            this.btnNVQL.Text = "Quảng cáo";
-            this.btnNVQL.UseVisualStyleBackColor = false;
+            this.btnTrailer.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnTrailer.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btnTrailer.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnTrailer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTrailer.ForeColor = System.Drawing.Color.White;
+            this.btnTrailer.Location = new System.Drawing.Point(165, 108);
+            this.btnTrailer.Name = "btnTrailer";
+            this.btnTrailer.Size = new System.Drawing.Size(132, 76);
+            this.btnTrailer.TabIndex = 3;
+            this.btnTrailer.Text = "Trailer";
+            this.btnTrailer.UseVisualStyleBackColor = false;
+            this.btnTrailer.Click += new System.EventHandler(this.btnTrailer_Click);
             // 
             // label1
             // 
@@ -164,7 +165,7 @@
         private System.Windows.Forms.Label lblAccountInfo;
 		private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnNVQL;
+        private System.Windows.Forms.Button btnTrailer;
         private System.Windows.Forms.Label label1;
     }
 }

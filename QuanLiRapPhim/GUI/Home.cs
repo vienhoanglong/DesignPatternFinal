@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace QuanLiRapPhim
 {
-    public partial class Home : Form 
+    public partial class Home : Form
     {
         private UserService service;
         public Home(TaiKhoan acc)
@@ -26,8 +26,8 @@ namespace QuanLiRapPhim
 
         private void ChangeAccount(int type)
         {
-            if (loginAccount.Type == 2) 
-            { 
+            if (loginAccount.Type == 2)
+            {
                 //btnAdmin.Enabled = false;
                 service = new UserServiceProxy("User service", "user");
             }
@@ -71,6 +71,11 @@ namespace QuanLiRapPhim
             this.Show();
         }
 
-        
-    }
+        private void btnTrailer_Click(object sender, EventArgs e)
+        {
+            Trailer frm = new Trailer();
+            frm.ShowDialog();
+            this.Show();
+        }
+    } 
 }

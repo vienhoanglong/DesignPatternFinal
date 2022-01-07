@@ -180,6 +180,8 @@
     <Compile Include="Admin\NhanVien.Designer.cs">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </Compile>
+    <Compile Include="Patterns\State\MediaPlayer.cs" />
+    <Compile Include="Patterns\State\State.cs" />
     <Compile Include="Patterns\State\Track.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -357,6 +359,8 @@
   <ItemGroup>
     <None Include="Resources\next.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\pause.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

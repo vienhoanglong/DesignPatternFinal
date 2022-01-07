@@ -18,17 +18,7 @@ namespace QuanLiRapPhim.DTO
             this.Point = point;
         }
 
-        //public KhachHang(DataRow row)
-        //{
-        //    this.ID = row["id"].ToString();
-        //    this.Name = row["HoTen"].ToString();
-        //    this.BirthDate = DateTime.Parse(row["NgaySinh"].ToString());
-        //    this.Address = row["DiaChi"].ToString();
-        //    this.Phone = row["SDT"].ToString();
-        //    this.IdentityCard = (int)row["CMND"];
-        //    this.Point = (int)row["DiemTichLuy"];
-        //}
-
+        
         public string ID { get; set; }
 
         public string Name { get; set; }

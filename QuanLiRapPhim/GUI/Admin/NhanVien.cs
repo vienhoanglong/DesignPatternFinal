@@ -61,14 +61,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
         //Thêm Staff
         void AddStaff(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            //if (NhanVienDAO.InsertStaff(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
-            //{
-            //    MessageBox.Show("Thêm nhân viên thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Thêm nhân viên thất bại");
-            //}
+           
             ArrayList data = new ArrayList() { id, hoTen, ngaySinh, diaChi, sdt, cmnd };
 
             NV.add(data);
@@ -89,14 +82,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
         //Sửa Staff
         void UpdateStaff(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            //if (NhanVienDAO.UpdateStaff(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
-            //{
-            //    MessageBox.Show("Sửa nhân viên thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Sửa nhân viên thất bại");
-            //}
+            
             ArrayList data = new ArrayList() { id, hoTen, ngaySinh, diaChi, sdt, cmnd };
 
             NV.update(data);
@@ -117,14 +103,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
         //Xóa Staff
         void DeleteStaff(string id)
         {
-            //if (NhanVienDAO.DeleteStaff(id))
-            //{
-            //    MessageBox.Show("Xóa nhân viên thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Xóa nhân viên thất bại");
-            //}
+
             NV.delete(id);
         }
         private void btnDeleteStaff_Click(object sender, EventArgs e)

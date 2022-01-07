@@ -28,7 +28,6 @@ namespace QuanLiRapPhim
         {
             if (loginAccount.Type == 2)
             {
-                //btnAdmin.Enabled = false;
                 service = new UserServiceProxy("User service", "user");
             }
             else
@@ -73,9 +72,17 @@ namespace QuanLiRapPhim
 
         private void btnTrailer_Click(object sender, EventArgs e)
         {
-            Trailer frm = new Trailer();
-            frm.ShowDialog();
-            this.Show();
+            try
+            {
+                service.loadBanQuanLy();
+                Trailer frm = new Trailer();
+                frm.ShowDialog();
+                this.Show();
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show(err.Message);
+            }
         }
     } 
 }

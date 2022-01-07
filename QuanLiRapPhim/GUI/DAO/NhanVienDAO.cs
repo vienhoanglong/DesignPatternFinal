@@ -16,8 +16,7 @@ namespace QuanLiRapPhim.DAO
 			foreach (DataRow item in data.Rows)
 			{
 
-                //staff = new NhanVien(item);
-                //return staff;
+    
                 staff = (NhanVien)new NhanVienBuilder()
                     .setId(item["id"].ToString())
                     .setAddress(item["DiaChi"].ToString())
@@ -37,8 +36,6 @@ namespace QuanLiRapPhim.DAO
 			DataTable data = DataProvider.getInstance().ExecuteQuery("SELECT * FROM dbo.NhanVien");
 			foreach (DataRow item in data.Rows)
 			{
-                //NhanVien staff = new NhanVien(item);
-                //staffList.Add(staff);
                 NhanVien staff = (NhanVien)new NhanVienBuilder()
                     .setId(item["id"].ToString())
                     .setAddress(item["DiaChi"].ToString())
@@ -78,16 +75,10 @@ namespace QuanLiRapPhim.DAO
 
         public static DataTable SearchStaffByName(string name)
         {
-            //List<Staff> searchList = new List<Staff>();
-            //DataTable data = DataProvider.ExecuteQuery("SELECT * FROM dbo.NhanVien WHERE HoTen = N'" + name + "'");
+            
             DataTable data = DataProvider.getInstance().ExecuteQuery("EXEC USP_SearchStaff @hoTen", new object[] { name });
-            //foreach (DataRow item in data.Rows)
-            //{
-            //	Staff staff = new Staff(item);
-            //	searchList.Add(staff);
-            //}
+            
             return data;
-            //TODO : Giải quyết trường hợp đang được comment
         }
     }
 }

@@ -110,7 +110,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAO\IDAO.cs" />
     <Compile Include="DAO\TaiKhoanDAO.cs" />
     <Compile Include="DAO\PhongChieuDAO.cs" />
     <Compile Include="DAO\KhachHangDAO.cs" />

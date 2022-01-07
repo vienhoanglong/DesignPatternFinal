@@ -127,8 +127,7 @@ namespace QuanLiRapPhim
             ICommand command = null;
             if (btnChair.BackColor == Color.White)
             {
-                //veXemPhim.addGhe(btnChair.Text);
-                //Console.WriteLine(veXemPhim.cost());
+                
                 string slot = btnChair.Text;
                 commandstore.TryGetValue(slot,out command);
                 command.executeOn();
@@ -136,7 +135,6 @@ namespace QuanLiRapPhim
                 grpLoaiVe.Enabled = true;
                 rdoAdult.Checked = true;
 
-               // btnChair.BackColor = Color.Black;
                 Ve ticket = btnChair.Tag as Ve;
                 
                 ticket.Price = ticketPrice;
@@ -152,13 +150,11 @@ namespace QuanLiRapPhim
             }
             else if (btnChair.BackColor == Color.Black)
             {
-                //veXemPhim.removeGhe(btnChair.Text);
-                //Console.WriteLine(veXemPhim.cost());
+                
 
                 string slot = btnChair.Text;
                 commandstore.TryGetValue(slot, out command);
                 command.executeOff();
-                //btnChair.BackColor = Color.White;
                 Ve ticket = btnChair.Tag as Ve;
 
                 total -= ticket.Price;
@@ -170,7 +166,6 @@ namespace QuanLiRapPhim
                 listSeatSelected.Remove(btnChair);
                 plusPoint--;
                 lblPlusPoint.Text = plusPoint + "";
-                //grpLoaiVe.Enabled = false;
             }
             else if (btnChair.BackColor == Color.Red)
             {
@@ -273,7 +268,6 @@ namespace QuanLiRapPhim
             {
                 if (listSeatSelected.Count == 0) return;
 
-                //veXemPhim.setLoaiVe("Student");
 
                 Ve ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ve;
                 ticket.Type = 2;
@@ -293,7 +287,6 @@ namespace QuanLiRapPhim
             {
                 if (listSeatSelected.Count == 0) return;
 
-                //veXemPhim.setLoaiVe("Adult");
 
 
                 Ve ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ve;
@@ -314,7 +307,6 @@ namespace QuanLiRapPhim
             {
                 if (listSeatSelected.Count == 0) return;
 
-                //veXemPhim.setLoaiVe("Child");
 
 
                 Ve ticket = listSeatSelected[listSeatSelected.Count - 1].Tag as Ve;

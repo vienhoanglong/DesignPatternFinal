@@ -52,14 +52,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
 
         void InsertCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd)
         {
-            //if (KhachHangDAO.InsertCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd))
-            //{
-            //    MessageBox.Show("Thêm khách hàng thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Thêm khách hàng thất bại");
-            //}
+            
             ArrayList data = new ArrayList() { id, hoTen, ngaySinh, diaChi, sdt, cmnd };
 
             KH.add(data);
@@ -80,14 +73,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
 
         void UpdateCustomer(string id, string hoTen, DateTime ngaySinh, string diaChi, string sdt, int cmnd, int point)
         {
-            //if (KhachHangDAO.UpdateCustomer(id, hoTen, ngaySinh, diaChi, sdt, cmnd, point))
-            //{
-            //    MessageBox.Show("Sửa khách hàng thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Sửa khách hàng thất bại");
-            //}
+            
             ArrayList data = new ArrayList() { id, hoTen, ngaySinh, diaChi, sdt, cmnd, point };
 
             KH.update(data);
@@ -109,14 +95,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
 
         void DeleteCustomer(string id)
         {
-            //if (KhachHangDAO.DeleteCustomer(id))
-            //{
-            //    MessageBox.Show("Xóa khách hàng thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Xóa khách hàng thất bại");
-            //}
+           
             KH.delete(id);
         }
         private void btnDeleteCustomer_Click(object sender, EventArgs e)

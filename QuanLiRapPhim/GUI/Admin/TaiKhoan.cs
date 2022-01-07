@@ -79,14 +79,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
 
         void InsertAccount(string username, int accountType, string idStaff)
         {
-            //if (TaiKhoanDAO.InsertAccount(username, accountType, idStaff))
-            //{
-            //    MessageBox.Show("Thêm tài khoản thành công, mật khẩu mặc định : 1");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Thêm tài khoản thất bại");
-            //}
+           
             ArrayList data = new ArrayList() { username, accountType, idStaff };
 
             TK.add(data);
@@ -102,14 +95,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
 
         void UpdateAccount(string username, int accountType)
         {
-            //if (TaiKhoanDAO.UpdateAccount(username, accountType))
-            //{
-            //    MessageBox.Show("Sửa tài khoản thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Sửa tài khoản thất bại");
-            //}
+           
 
             ArrayList data = new ArrayList() { username, accountType };
 
@@ -125,14 +111,7 @@ namespace QuanLiRapPhim.frmAdminUserControls
 
         void DeleteAccount(string username)
         {
-            //if (TaiKhoanDAO.DeleteAccount(username))
-            //{
-            //    MessageBox.Show("Xóa tài khoản thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Xóa tài khoản thất bại");
-            //}
+           
             TK.delete(username);
         }
         private void btnDeleteAccount_Click(object sender, EventArgs e)

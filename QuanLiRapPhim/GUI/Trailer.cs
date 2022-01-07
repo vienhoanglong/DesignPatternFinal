@@ -18,6 +18,10 @@ namespace QuanLiRapPhim
         {
             InitializeComponent();
             media = new MediaPlayer(trailerVideo);
+            btnNext.Enabled = false;
+            btnPlay.Enabled = false;
+            btnPrev.Enabled = false;
+            btnStop.Enabled = false;
         }
 
         private void Trailer_Load(object sender, EventArgs e)
@@ -41,6 +45,10 @@ namespace QuanLiRapPhim
                     media.tracks.addListTrackName(item);
                     listVideo.Items.Add(item);
                 }
+                btnNext.Enabled = true;
+                btnPlay.Enabled = true;
+                btnPrev.Enabled = true;
+                btnStop.Enabled = true;
             }
         }
 

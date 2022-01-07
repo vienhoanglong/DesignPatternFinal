@@ -18,16 +18,7 @@ namespace QuanLiRapPhim.DTO
             this.IdentityCard = identityCard;
         }
 
-        //public NhanVien(DataRow row)
-        //{
-        //    this.ID = row["id"].ToString();
-        //    this.Name = row["HoTen"].ToString();
-        //    this.BirthDate = DateTime.Parse(row["NgaySinh"].ToString());
-        //    this.Address = row["DiaChi"].ToString();
-        //    this.Phone = row["SDT"].ToString();
-        //    this.IdentityCard = Int32.Parse(row["CMND"].ToString());
-        //}
-
+       
         public string ID { get; set; }
 
         public string Name { get; set; }

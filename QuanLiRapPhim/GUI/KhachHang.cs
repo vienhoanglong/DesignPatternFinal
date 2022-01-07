@@ -26,7 +26,6 @@ namespace QuanLiRapPhim
                 MessageBox.Show("ID hoặc Họ tên của Khách Hàng không chính xác!\nVui lòng nhập lại thông tin.");
                 return;
             }
-            //customer = new DTO.KhachHang(data.Rows[0]);
             DataRow row = data.Rows[0];
             customer = (DTO.KhachHang)new KhachHangBuilder()
                 .setId(row["id"].ToString())

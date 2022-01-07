@@ -64,20 +64,17 @@ namespace QuanLiRapPhim.Patterns.State
             tracks.nextTrack();
             tracks.mediaPlayer.URL = tracks.getCurrentTrack();
         }
-
         public override void onStop()
         {
             playing = false;
             tracks.reset();
             tracks.mediaPlayer.Ctlcontrols.stop();
         }
-
         public override void onPlay()
         {
             playing = false;
             tracks.mediaPlayer.Ctlcontrols.pause();
         }
-
         public override void onPrev()
         {
             playing = true;
@@ -98,20 +95,17 @@ namespace QuanLiRapPhim.Patterns.State
             tracks.nextTrack();
             tracks.mediaPlayer.URL = tracks.getCurrentTrack();
         }
-
         public override void onStop()
         {
             playing = false;
             tracks.reset();
             tracks.mediaPlayer.Ctlcontrols.stop();
         }
-
         public override void onPlay()
         {
             playing = true;
             tracks.mediaPlayer.Ctlcontrols.play();
         }
-
         public override void onPrev()
         {
             playing = true;

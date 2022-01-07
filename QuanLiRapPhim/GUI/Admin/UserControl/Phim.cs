@@ -90,15 +90,6 @@ namespace QuanLiRapPhim.frmAdminUserControls.DataUserControl
 
         void InsertMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
         {
-            //if (PhimDAO.InsertMovie(id, name, desc, length, startDate, endDate, productor, director, year, image))
-            //{
-            //    MessageBox.Show("Thêm phim thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Thêm phim thất bại");
-            //}
-
             ArrayList data = new ArrayList() { id, name, desc, length, startDate, endDate, productor, director, year, image };
 
             MV.add(data);
@@ -160,14 +151,6 @@ namespace QuanLiRapPhim.frmAdminUserControls.DataUserControl
 
         void UpdateMovie(string id, string name, string desc, float length, DateTime startDate, DateTime endDate, string productor, string director, int year, byte[] image)
         {
-            //if (PhimDAO.UpdateMovie(id, name, desc, length, startDate, endDate, productor, director, year, image))
-            //{
-            //    MessageBox.Show("Sửa phim thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Sửa phim thất bại");
-            //}
             ArrayList data = new ArrayList() { id, name, desc, length, startDate, endDate, productor, director, year, image };
 
             MV.update(data);
@@ -204,14 +187,7 @@ namespace QuanLiRapPhim.frmAdminUserControls.DataUserControl
 
         void DeleteMovie(string id)
         {
-            //if (PhimDAO.DeleteMovie(id))
-            //{
-            //    MessageBox.Show("Xóa phim thành công");
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Xóa phim thất bại");
-            //}
+           
             MV.delete(id);
         }
         private void btnDeleteMovie_Click(object sender, EventArgs e)

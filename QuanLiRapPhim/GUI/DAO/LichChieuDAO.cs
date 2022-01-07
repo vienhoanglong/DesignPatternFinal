@@ -43,7 +43,7 @@ namespace QuanLiRapPhim.DAO
 
         public static DataTable GetListShowtime()
         {
-            return DataProvider.getInstance().ExecuteQuery("EXEC USP_GetShowtime");
+            return DataProvider.getInstance().ExecuteQuery("EXEC USP_GetShowtime");    
         }
 
         public static bool InsertShowtime(string id, string cinemaID, string formatMovieID, DateTime time, float ticketPrice)

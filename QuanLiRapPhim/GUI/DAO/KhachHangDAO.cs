@@ -1,5 +1,6 @@
 ﻿using QuanLiRapPhim.Patterns.Builder;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace QuanLiRapPhim.DAO
             {
                 IBuilder builder = new KhachHangBuilder()
                     .setId(item["id"].ToString())
-                    .setAddress(item["DiaChi"].ToString())f
+                    .setAddress(item["DiaChi"].ToString())
                     .setBirth(DateTime.Parse(item["NgaySinh"].ToString()))
                     .setIdentityCard(Int32.Parse(item["CMND"].ToString()))
                     .setName(item["HoTen"].ToString())
@@ -87,5 +88,6 @@ namespace QuanLiRapPhim.DAO
         {
             return DataProvider.getInstance().ExecuteQuery("EXEC USP_SearchCustomer @hoTen", new object[] { name });
         }
+      
     }
 }

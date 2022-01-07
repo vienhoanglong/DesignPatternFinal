@@ -46,10 +46,6 @@ namespace QuanLiRapPhim.Patterns.Factory
                     validator = new DateValidator();
                     break;
             }
-                 
-
-
-
             return validator;
         }
 

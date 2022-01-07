@@ -14,7 +14,6 @@ namespace QuanLiRapPhim.Patterns.AbstractFactory
         private static readonly object padlock = new object();
         private static SqlConnection con;
 
-
         //Signleton
         public DbConnection createConnection()
         {

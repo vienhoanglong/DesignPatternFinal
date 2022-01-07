@@ -14,7 +14,6 @@ namespace QuanLiRapPhim.Patterns.Decorator
     public abstract class Item : ISubject
     {
         protected ISubject subject { get; set; }
-        //protected int soLuong { get; set; }
         protected Item(ISubject subject, int soLuong)
         {
             this.soLuong = soLuong;

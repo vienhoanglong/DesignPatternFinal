@@ -17,6 +17,7 @@ namespace QuanLiRapPhim.Patterns.Factory
     }
     class FormFactory
     {
+
         public static UserControl CreateForm(FormType type)
         {
             UserControl form = null;

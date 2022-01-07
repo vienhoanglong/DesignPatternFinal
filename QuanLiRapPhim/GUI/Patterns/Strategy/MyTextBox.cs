@@ -14,7 +14,7 @@ namespace QuanLiRapPhim.Patterns.Strategy
     public partial class MyTextBox : TextBox
     {
         public ValidatorType validateType { get; set; }
-        public Validator Validator;
+        private Validator Validator;
         public MyTextBox()
         {
             InitializeComponent();

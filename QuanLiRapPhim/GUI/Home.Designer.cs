@@ -70,7 +70,7 @@
             this.btnAdmin.TabIndex = 1;
             this.btnAdmin.Text = "Ban Quản Lí";
             this.btnAdmin.UseVisualStyleBackColor = false;
-            this.btnAdmin.Click += new System.EventHandler(this.btnLogIn_Click);
+            this.btnAdmin.Click += new System.EventHandler(this.btnBanQuanLi);
             // 
             // lblAccountInfo
             // 

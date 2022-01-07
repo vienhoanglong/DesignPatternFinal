@@ -39,7 +39,7 @@ namespace QuanLiRapPhim
             lblAccountInfo.Text += LoginAccount.UserName;
         }
 
-        private void btnLogIn_Click(object sender, EventArgs e)
+        private void btnBanQuanLi(object sender, EventArgs e)
         {
             try
             {
@@ -53,7 +53,6 @@ namespace QuanLiRapPhim
             {
                 MessageBox.Show(err.Message);
             }
-            
         }
 
         private void btnSeller_Click(object sender, EventArgs e)

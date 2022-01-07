@@ -10,7 +10,6 @@ namespace QuanLiRapPhim.Patterns.Decorator
     {
         protected float giaBan { get; set; }
         protected int soLuong { get; set; }
-        //
         protected string loaiVe { get; set; }
         protected string viTriGhe { get; set; }
         protected string phim { get; set; }
@@ -24,20 +23,46 @@ namespace QuanLiRapPhim.Patterns.Decorator
         {
             return this.giaBan;
         }
-
-        //
-        //public abstract float cost();
-        //public void setGiaBan(float giaBan)
-        //{
-        //    this.giaBan = giaBan;
-        //}
-        //public void setSoLuong(int soLuong)
-        //{
-        //    this.soLuong = soLuong;
-        //}
-        //public float getGiaBan() { return this.giaBan; }
-        //public int getSoLuong() { return this.soLuong; }
-
+        public int getSoLuong()
+        {
+            return this.soLuong;
+        }
+        public void setSoLuong(int soLuong)
+        {
+            this.soLuong = soLuong;
+        }
+        public string getLoaiVe()
+        {
+            return this.loaiVe;
+        }
+        public void setLoaiVe(string loaiVe)
+        {
+            this.loaiVe = loaiVe;
+        }
+        public string getViTriGhe()
+        {
+            return this.viTriGhe;
+        }
+        public void setViTriGhe(string viTriGhe)
+        {
+            this.viTriGhe = viTriGhe;
+        }
+        public string getPhim()
+        {
+            return this.phim;
+        }
+        public void setPhim(string phim)
+        {
+            this.phim = phim;
+        }
+        public DateTime getThoiGianChieu()
+        {
+            return this.thoiGianChieu;
+        }
+        public void setThoiGianChieu(DateTime thoiGianChieu)
+        {
+            this.thoiGianChieu = thoiGianChieu;
+        }
     }
     public class VeXemPhim: ISubject
     {
@@ -52,52 +77,5 @@ namespace QuanLiRapPhim.Patterns.Decorator
            return giaBan;
         }
     }
-    //public class VeXemPhim : ISubject
-    //{
-    //    private string loaiVe;
-    //    private List<string> viTriGhe;
-    //    private string phim;
-    //    private DateTime thoiGianChieu;
-    //    public VeXemPhim(string loaiVe, List<string> viTriGhe,string phim, DateTime thoiGianChieu)
-    //    {
-    //        this.loaiVe = loaiVe;
-    //        this.viTriGhe = viTriGhe;
-    //        this.phim = phim;
-    //        this.thoiGianChieu = thoiGianChieu;
-    //        this.setSoLuong( viTriGhe.Count);
-    //        this.setGiaBan( 85000);
-    //    }
-    //    public VeXemPhim(string phim, DateTime thoiGianChieu)
-    //    {
-    //        this.loaiVe = "Adult";
-    //        this.phim = phim;
-    //        this.thoiGianChieu = thoiGianChieu;
-    //        this.setGiaBan(85000);
-    //        this.viTriGhe = new List<string>();
-
-    //    }
-    //    public override float cost()
-    //    {
-    //        return this.getGiaBan() * this.getSoLuong();
-    //    }
-    //    public void addGhe(string ghe)
-    //    {
-    //        if (!viTriGhe.Contains(ghe)) viTriGhe.Add(ghe);
-    //        this.setSoLuong(viTriGhe.Count);
-    //    }
-    //    public void removeGhe(string ghe)
-    //    {
-    //        if (viTriGhe.Contains(ghe)) viTriGhe.Remove(ghe);
-    //        this.setSoLuong(viTriGhe.Count);
-    //    }
-    //    public void setLoaiVe(string loaiVe)
-    //    {
-    //        this.loaiVe = loaiVe;
-    //        if(loaiVe == "Adult") { this.setGiaBan(85000) ; }
-    //        else if (loaiVe == "Student") this.setGiaBan(85000 * 0.8f);
-    //        else if (loaiVe == "Child") this.setGiaBan(85000 * 0.7f);
-    //    }
-    //}
-
-
+  
 }
